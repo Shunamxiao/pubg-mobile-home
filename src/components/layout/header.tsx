@@ -61,7 +61,7 @@ export function Header() {
             </nav>
         </div>
 
-        <div className="flex items-center">
+        <div className="hidden md:flex items-center">
           <Button asChild>
             <Link href="/#download">
               Download Game
