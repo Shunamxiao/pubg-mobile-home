@@ -38,41 +38,37 @@ export default function Home() {
       </section>
 
       {/* Latest Articles Section */}
-      <section className="mt-[-4rem] relative z-20">
-        <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">最新文章</h2>
-        </div>
-        <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.slice(0, 3).map((article) => (
-                <Card key={article.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <Link href={`/articles/${article.slug}`} className="block">
-                    <Image
-                    src={article.imageUrl}
-                    alt={article.title}
-                    data-ai-hint={article.imageHint}
-                    width={1312}
-                    height={600}
-                    className="w-full object-cover aspect-[1312/600]"
-                    />
+      <section className="container px-4 md:px-6 mt-[-4rem] relative z-20">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">最新文章</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articles.slice(0, 3).map((article) => (
+            <Card key={article.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <Link href={`/articles/${article.slug}`} className="block">
+                <Image
+                src={article.imageUrl}
+                alt={article.title}
+                data-ai-hint={article.imageHint}
+                width={1312}
+                height={600}
+                className="w-full object-cover aspect-[1312/600]"
+                />
+            </Link>
+            <CardHeader className="p-4">
+                <CardTitle className="text-lg leading-tight line-clamp-2">{article.title}</CardTitle>
+                <CardDescription className="text-xs pt-1">{article.date} by {article.author}</CardDescription>
+            </CardHeader>
+            <CardContent className="p-4 pt-0 flex-grow">
+                <p className="text-muted-foreground text-sm line-clamp-2">{article.summary}</p>
+            </CardContent>
+            <div className="p-4 pt-0">
+                <Button asChild variant="link" className="p-0 h-auto text-sm">
+                <Link href={`/articles/${article.slug}`}>
+                    Read More <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-                <CardHeader className="p-4">
-                    <CardTitle className="text-lg leading-tight line-clamp-2">{article.title}</CardTitle>
-                    <CardDescription className="text-xs pt-1">{article.date} by {article.author}</CardDescription>
-                </CardHeader>
-                <CardContent className="p-4 pt-0 flex-grow">
-                    <p className="text-muted-foreground text-sm line-clamp-2">{article.summary}</p>
-                </CardContent>
-                <div className="p-4 pt-0">
-                    <Button asChild variant="link" className="p-0 h-auto text-sm">
-                    <Link href={`/articles/${article.slug}`}>
-                        Read More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                    </Button>
-                </div>
-                </Card>
-            ))}
+                </Button>
             </div>
+            </Card>
+        ))}
         </div>
       </section>
 
