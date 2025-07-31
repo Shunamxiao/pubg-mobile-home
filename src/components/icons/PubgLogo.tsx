@@ -11,7 +11,7 @@ export function PubgLogo() {
         className="rounded-md"
       />
       <span className="font-bold text-lg text-white whitespace-nowrap">
-        最正宗原始的PUBG Mobile手游
+        PUBG Mobile
       </span>
     </div>
   );
