@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { getUpdateBySlug } from '@/lib/data';
+import { MarkdownContent } from '@/components/MarkdownContent';
 
 type UpdatePageProps = {
   params: {
@@ -14,10 +15,6 @@ export default function UpdatePage({ params }: UpdatePageProps) {
   if (!update) {
     notFound();
   }
-
-  const contentWithLineBreaks = update.content.split('\n').filter(p => p.trim() !== '').map((paragraph, index) => (
-    <p key={index}>{paragraph}</p>
-  ));
 
   return (
     <div className="bg-background">
@@ -33,18 +30,20 @@ export default function UpdatePage({ params }: UpdatePageProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
       </div>
 
-      <article className="container max-w-4xl py-12 md:py-16 -mt-32 relative z-10">
-        <header className="mb-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-2 text-shadow">{update.title}</h1>
-          <p className="text-2xl font-bold text-accent">Version {update.version}</p>
-          <p className="text-md text-muted-foreground mt-2">{update.date}</p>
-        </header>
-        
-        <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
-          <p className="text-xl text-foreground font-semibold">{update.summary}</p>
-          {contentWithLineBreaks}
-        </div>
-      </article>
+      <div className="container px-4 md:px-6">
+        <article className="max-w-4xl mx-auto py-12 md:py-16 -mt-32 relative z-10">
+          <header className="mb-8 text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-2 text-shadow">{update.title}</h1>
+            <p className="text-2xl font-bold text-accent">Version {update.version}</p>
+            <p className="text-md text-muted-foreground mt-2">{update.date}</p>
+          </header>
+          
+          <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
+            <p className="text-xl text-foreground font-semibold">{update.summary}</p>
+            <MarkdownContent content={update.content} />
+          </div>
+        </article>
+      </div>
     </div>
   );
 }

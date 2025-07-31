@@ -65,6 +65,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  .prose {
+    h1,h2,h3,h4,h5,h6 { @apply text-foreground; }
+    a { @apply text-accent hover:text-accent/80; }
+    strong { @apply text-foreground/90; }
+    blockquote { @apply border-accent; }
+  }
 }
 
 @layer utilities {
