@@ -5,8 +5,9 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'PUBG Mobile Hub',
-  description: 'Your one-stop destination for everything PUBG Mobile.',
+  title: 'PUBG Mobile官网 | 下载、更新、攻略 - 官方正版入口',
+  description: '欢迎访问PUBG Mobile官网，提供最新游戏下载、更新日志、游戏攻略和玩家社区，支持安卓与iOS系统，一站式掌握刺激战场动态。',
+  keywords: ['pubg mobile', 'pubg mobile 官网', 'pubg mobile 下载', 'pubg mobile 官方网站', 'pubg mobile 国际服', 'pubg mobile 国服', 'pubg mobile 更新', 'pubg mobile 最新版本', 'pubg mobile 安卓下载', 'pubg mobile iOS 下载', '地铁逃生', 'pbg大逃杀'],
 };
 
 export default function RootLayout({

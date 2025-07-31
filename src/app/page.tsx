@@ -7,6 +7,7 @@ import { GameDownloadButtons } from '@/components/GameDownloadButtons';
 import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
+  const keywords = ['pubg mobile', 'pubg mobile 官网', 'pubg mobile 下载', 'pubg mobile 官方网站', 'pubg mobile 国际服', 'pubg mobile 国服', 'pubg mobile 更新', 'pubg mobile 最新版本', 'pubg mobile 安卓下载', 'pubg mobile iOS 下载', '地铁逃生', 'pbg大逃杀'];
   return (
     <div className="flex flex-col gap-16 md:gap-24 pb-16">
       {/* Hero Section */}
@@ -122,6 +123,11 @@ export default function Home() {
           ></iframe>
         </div>
       </section>
+
+      {/* SEO Keywords Section */}
+      <div className="sr-only">
+        {keywords.join(', ')}
+      </div>
     </div>
   );
 }
