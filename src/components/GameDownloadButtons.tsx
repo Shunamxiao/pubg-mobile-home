@@ -20,7 +20,7 @@ export function GameDownloadButtons() {
                 </Link>
             </Button>
             <Button asChild size="lg" className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753972022261-1753972021905-app_store.png')"}}>
-                <Link href="#">
+                <Link href="https://apps.apple.com/hk/app/pubg-mobile/id1330123889">
                     <span className="sr-only">Download on the App Store</span>
                 </Link>
             </Button>
@@ -46,13 +46,13 @@ export function GameDownloadButtons() {
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
                         <Button asChild size="lg">
-                            <Link href="#" target="_blank">
+                            <Link href="https://www.123pan.com/s/4H3LVv-DykI" target="_blank">
                                 <DownloadCloud className="mr-2"/>
                                 网盘下载
                             </Link>
                         </Button>
                         <Button asChild size="lg" variant="secondary">
-                             <Link href="#" target="_blank">
+                             <Link href="https://f.gbcass.com/PUBGMOBILE_Global_3.9.0_uawebsite_livik01_9275A2699.apk" target="_blank">
                                 <Globe className="mr-2"/>
                                 官网下载
                              </Link>

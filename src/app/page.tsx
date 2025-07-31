@@ -9,12 +9,12 @@ import { ArrowRight } from 'lucide-react';
 export default function Home() {
   const keywords = ['pubg mobile', 'pubg mobile 官网', 'pubg mobile 下载', 'pubg mobile 官方网站', 'pubg mobile 国际服', 'pubg mobile 国服', 'pubg mobile 更新', 'pubg mobile 最新版本', 'pubg mobile 安卓下载', 'pubg mobile iOS 下载', '地铁逃生', 'pbg大逃杀'];
   return (
-    <div className="flex flex-col gap-16 md:gap-24 pb-16">
+    <div className="flex flex-col gap-12 md:gap-16 pb-16">
       {/* Hero Section */}
       <section className="relative w-full aspect-video flex items-center justify-center text-center text-white">
         <Image
-          src="https://www.pubgmobile.com/images/event/home/downloadbj.png"
-          alt="PUBG Mobile battle scene"
+          src="https://cdn.apks.cc/blinko/1753975129551-1753975127906-downloadbj.png"
+          alt="PUBG Mobile下载,地铁逃生下载"
           data-ai-hint="battle royale action"
           fill
           className="object-cover object-center -z-10"
@@ -24,10 +24,11 @@ export default function Home() {
         <div className="container px-4 md:px-6 z-10">
           <div className="max-w-3xl mx-auto flex flex-col items-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 text-shadow-lg animate-fade-in-down">
-              Welcome to the Battlegrounds
+            史诗级大逃杀巨作 
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-8 animate-fade-in-up [animation-delay:0.2s]">
-              Your one-stop destination for the latest news, patch notes, and pro strategies for PUBG Mobile.
+            超多活动，等你游玩,
+            在PUBG MOBILE登上颠峰，尽情开火。 PUBG MOBILE是原创的大逃杀手机游戏，也是手机射击游戏巅峰之作。
             </p>
             <div id="download" className="animate-fade-in-up [animation-delay:0.4s]">
                 <GameDownloadButtons />
@@ -38,7 +39,7 @@ export default function Home() {
 
       {/* Latest Articles Section */}
       <section className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Latest Articles</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">最新文章</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.slice(0, 3).map((article) => (
             <Card key={article.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
