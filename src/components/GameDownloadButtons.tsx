@@ -14,7 +14,7 @@ import Link from 'next/link';
 export function GameDownloadButtons() {
     return (
         <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild variant="outline" size="lg" className="border-accent text-accent-foreground bg-accent/90 hover:bg-accent hover:text-accent-foreground">
+            <Button asChild size="lg" className="animated-border-btn bg-primary/90 text-primary-foreground hover:bg-primary hover:scale-105 transition-transform duration-300">
                 <Link href="#">
                     <Apple className="mr-2 h-6 w-6" />
                     App Store
@@ -22,7 +22,7 @@ export function GameDownloadButtons() {
             </Button>
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button variant="outline" size="lg" className="border-accent text-accent-foreground bg-accent/90 hover:bg-accent hover:text-accent-foreground">
+                    <Button size="lg" className="animated-border-btn bg-primary/90 text-primary-foreground hover:bg-primary hover:scale-105 transition-transform duration-300">
                         <Bot className="mr-2 h-6 w-6" />
                         <span>安卓下载</span>
                     </Button>
