@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { Bot, DownloadCloud, Globe } from 'lucide-react';
+import { DownloadCloud, Globe } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -21,9 +21,12 @@ export function GameDownloadButtons() {
             </Button>
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button size="lg" className="animated-border-btn bg-primary/90 text-primary-foreground hover:bg-primary hover:scale-105 transition-transform duration-300">
-                        <Bot className="mr-2 h-6 w-6" />
-                        <span>安卓下载</span>
+                    <Button 
+                      size="lg" 
+                      className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300" 
+                      style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753971933326-1753971932556-apk_download.png')"}}
+                    >
+                        <span className="sr-only">安卓下载</span>
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
