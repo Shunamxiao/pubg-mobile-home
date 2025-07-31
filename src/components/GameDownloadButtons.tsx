@@ -14,12 +14,12 @@ import Link from 'next/link';
 export function GameDownloadButtons() {
     return (
         <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753972567787-1753972566208-google_apk_download.png')"}}>
+            <Button asChild size="lg" className="animated-border-btn !p-0 w-[180px] h-[52px] sm:w-[200px] sm:h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753972567787-1753972566208-google_apk_download.png')"}}>
                 <Link href="https://play.google.com/store/apps/details?id=com.tencent.ig" target="_blank">
                     <span className="sr-only">Download on Google Play</span>
                 </Link>
             </Button>
-            <Button asChild size="lg" className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753972022261-1753972021905-app_store.png')"}}>
+            <Button asChild size="lg" className="animated-border-btn !p-0 w-[180px] h-[52px] sm:w-[200px] sm:h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753972022261-1753972021905-app_store.png')"}}>
                 <Link href="https://apps.apple.com/hk/app/pubg-mobile/id1330123889">
                     <span className="sr-only">Download on the App Store</span>
                 </Link>
@@ -28,10 +28,10 @@ export function GameDownloadButtons() {
                 <DialogTrigger asChild>
                     <Button 
                       size="lg" 
-                      className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 text-white border border-white/50 flex items-center justify-center" 
+                      className="animated-border-btn !p-0 w-[180px] h-[52px] sm:w-[200px] sm:h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 text-white border border-white/50 flex items-center justify-center" 
                       style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753971933326-1753971932556-apk_download.png')"}}
                     >
-                        <div className="flex flex-col items-center leading-tight">
+                        <div className="flex flex-col items-center leading-tight scale-90 sm:scale-100">
                             <span className="text-xs font-medium">Android Download</span>
                             <span className="font-bold text-lg">安卓下载</span>
                         </div>
