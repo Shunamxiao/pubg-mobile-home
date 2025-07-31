@@ -19,7 +19,7 @@ export default function Home() {
           className="object-cover object-center -z-10"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent -z-10" />
         <div className="container px-4 md:px-6 z-10">
           <div className="max-w-3xl mx-auto flex flex-col items-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 text-shadow-lg animate-fade-in-down">
@@ -38,7 +38,7 @@ export default function Home() {
       {/* Latest Articles Section */}
       <section className="container px-4 md:px-6">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Latest Articles</h2>
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.slice(0, 3).map((article) => (
             <Card key={article.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <Link href={`/articles/${article.slug}`} className="block">
@@ -52,7 +52,7 @@ export default function Home() {
                 />
               </Link>
               <CardHeader className="p-4">
-                <CardTitle className="text-lg leading-tight">{article.title}</CardTitle>
+                <CardTitle className="text-lg leading-tight line-clamp-2">{article.title}</CardTitle>
                 <CardDescription className="text-xs pt-1">{article.date} by {article.author}</CardDescription>
               </CardHeader>
               <CardContent className="p-4 pt-0 flex-grow">
