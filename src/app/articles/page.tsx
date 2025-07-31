@@ -11,7 +11,7 @@ export default function ArticlesPage() {
       <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-12 text-center">
         Game Articles & Strategies
       </h1>
-      <div className="grid grid-cols-2 gap-8 lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
         {articles.map((article) => (
           <Card key={article.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <Link href={`/articles/${article.slug}`} className="block">
@@ -21,18 +21,18 @@ export default function ArticlesPage() {
                 data-ai-hint={article.imageHint}
                 width={800}
                 height={400}
-                className="w-full h-48 object-cover"
+                className="w-full h-32 object-cover"
               />
             </Link>
-            <CardHeader>
-              <CardTitle>{article.title}</CardTitle>
-              <CardDescription>{article.date} by {article.author}</CardDescription>
+            <CardHeader className="p-4">
+              <CardTitle className="text-lg leading-tight">{article.title}</CardTitle>
+              <CardDescription className="text-xs pt-1">{article.date} by {article.author}</CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow">
-              <p className="text-muted-foreground">{article.summary}</p>
+            <CardContent className="p-4 pt-0 flex-grow">
+              <p className="text-muted-foreground text-sm line-clamp-2">{article.summary}</p>
             </CardContent>
-            <div className="p-6 pt-0">
-              <Button asChild variant="link" className="p-0 h-auto">
+            <div className="p-4 pt-0">
+              <Button asChild variant="link" className="p-0 h-auto text-sm">
                 <Link href={`/articles/${article.slug}`}>
                   Read More <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
