@@ -19,7 +19,7 @@ export default function Home() {
           className="object-cover object-center -z-10"
           priority
         />
-        <div className="absolute inset-0 bg-black/60 -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent -z-10" />
         <div className="container px-4 md:px-6 z-10">
           <div className="max-w-3xl mx-auto flex flex-col items-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 text-shadow-lg animate-fade-in-down">
