@@ -5,12 +5,12 @@ import { PubgLogo } from '@/components/icons/PubgLogo';
 export function Footer() {
   return (
     <footer className="border-t border-border/40 py-8">
-      <div className="container flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex flex-col items-center md:items-start gap-4">
+      <div className="container flex flex-col items-center justify-between gap-6 md:flex-row">
+        <div className="flex flex-col items-center gap-4 md:items-start">
           <Link href="/">
             <PubgLogo />
           </Link>
-          <p className="text-sm text-muted-foreground text-center md:text-left">
+          <p className="text-sm text-muted-foreground text-center md:text-left max-w-xs">
             Your ultimate destination for PUBG Mobile news, updates, and community.<br />
             This is an unofficial fan-made website.
           </p>

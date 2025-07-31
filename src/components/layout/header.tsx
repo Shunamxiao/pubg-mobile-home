@@ -41,13 +41,13 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left">
-                <SheetHeader className="mb-6">
+                <SheetHeader>
                   <SheetTitle className="sr-only">Main Menu</SheetTitle>
                   <Link href="/" className="flex items-center space-x-2">
                     <PubgLogo />
                   </Link>
                 </SheetHeader>
-                <nav className="flex flex-col space-y-4">
+                <nav className="flex flex-col space-y-4 mt-6">
                   {navLinks.map(({ href, label, icon: Icon }) => (
                     <Link
                       key={label}
@@ -61,6 +61,12 @@ export function Header() {
                 </nav>
               </SheetContent>
             </Sheet>
+          </div>
+          
+          <div className="md:hidden">
+             <Link href="/">
+                <span className="sr-only">最正宗原始的PUBG Mobile手游</span>
+             </Link>
           </div>
 
           <div className="w-full flex-1 md:w-auto md:flex-none">

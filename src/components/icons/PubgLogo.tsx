@@ -1,20 +1,18 @@
-import type { SVGProps } from "react";
+import Image from "next/image";
 
-export function PubgLogo(props: SVGProps<SVGSVGElement>) {
+export function PubgLogo() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 245 50"
-      width="140"
-      height="30"
-      {...props}
-    >
-      <style>
-        {`.font-logo { font-family: 'PT Sans', sans-serif; font-weight: 700; font-size: 32px; fill: white; letter-spacing: -0.5px; }`}
-      </style>
-      <text x="0" y="35" className="font-logo">
-        PUBG MOBILE HUB
-      </text>
-    </svg>
+    <div className="flex items-center gap-3">
+      <Image 
+        src="https://cdn.apks.cc/blinko/1753973194134-1753973193794-nav_logo.png" 
+        alt="PUBG Mobile Logo"
+        width={40}
+        height={40}
+        className="rounded-md"
+      />
+      <span className="font-bold text-lg text-white whitespace-nowrap">
+        最正宗原始的PUBG Mobile手游
+      </span>
+    </div>
   );
 }
