@@ -11,7 +11,7 @@ export default function ArticlesPage() {
       <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-12 text-center">
         Game Articles & Strategies
       </h1>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-8 lg:grid-cols-3">
         {articles.map((article) => (
           <Card key={article.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <Link href={`/articles/${article.slug}`} className="block">
