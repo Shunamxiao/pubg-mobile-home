@@ -36,7 +36,7 @@ export const articles: Article[] = [
 2.  **Weapon Choice:** The M416 remains a versatile choice, but the Beryl M762 now packs an even bigger punch up close. Practice controlling its recoil in the training grounds to unlock its full potential.`,
     author: 'PlayerUnknown',
     date: 'August 15, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/unnamed.webp',
     imageHint: 'battlefield landscape',
   },
   {
@@ -55,7 +55,7 @@ Avoid bunching up to minimize vulnerability to grenades and sprays. Maintain a p
 > When engaging, focus fire on a single target to down them quickly. A 4v3 advantage is a massive game-changer.`,
     author: 'The Commander',
     date: 'August 10, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/unnamed.webp',
     imageHint: 'team soldiers',
   },
   {
@@ -77,7 +77,7 @@ Avoid bunching up to minimize vulnerability to grenades and sprays. Maintain a p
 *Our verdict:* The P90 is a situational monster. If you're playing an aggressive, building-clearing style, it's one of the best weapons in the game. For players who prefer to fight from a distance, it might be better to stick with an AR.`,
     author: 'Gunner',
     date: 'August 5, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/unnamed.webp',
     imageHint: 'futuristic weapon',
   },
 ];
@@ -99,7 +99,7 @@ To help traverse the battlefield, all players are now equipped with a personal j
 
 This update also includes various quality-of-life improvements, a new season pass, and a rebalancing of several assault rifles.`,
         date: 'July 28, 2024',
-        imageUrl: 'https://placehold.co/600x300.png',
+        imageUrl: 'https://cdn.apks.cc/blinko/unnamed.webp',
         imageHint: 'giant robot',
     },
     {
@@ -113,7 +113,7 @@ The **flying carpet** is a new two-person vehicle that allows for silent and swi
 
 This patch also introduced the new **AMR sniper rifle**, capable of one-shotting even a Level 3 helmet, and a host of bug fixes and performance optimizations.`,
         date: 'June 15, 2024',
-        imageUrl: 'https://placehold.co/600x300.png',
+        imageUrl: 'https://cdn.apks.cc/blinko/unnamed.webp',
         imageHint: 'desert city',
     },
 ];

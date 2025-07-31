@@ -27,7 +27,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || []
  
   return {
-    title: `${article.title} - PUBG Mobile`,
+    title: article.title,
     description: article.summary,
     openGraph: {
       title: article.title,
