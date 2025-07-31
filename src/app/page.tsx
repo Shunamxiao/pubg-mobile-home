@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-16 md:gap-24 pb-16">
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
+      <section className="relative w-full aspect-video flex items-center justify-center text-center text-white">
         <Image
           src="https://www.pubgmobile.com/images/event/home/downloadbj.png"
           alt="PUBG Mobile battle scene"

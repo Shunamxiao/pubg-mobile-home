@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        video: '16 / 9',
+      },
       fontFamily: {
         body: ['"PT Sans"', 'sans-serif'],
         headline: ['"PT Sans"', 'sans-serif'],
