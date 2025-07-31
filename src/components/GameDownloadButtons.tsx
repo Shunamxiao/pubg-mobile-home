@@ -28,10 +28,13 @@ export function GameDownloadButtons() {
                 <DialogTrigger asChild>
                     <Button 
                       size="lg" 
-                      className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 text-white border border-white/50" 
+                      className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 text-white border border-white/50 flex items-center justify-center" 
                       style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753971933326-1753971932556-apk_download.png')"}}
                     >
-                        安卓下载
+                        <div className="flex flex-col items-center leading-tight">
+                            <span className="text-xs font-medium">Android Download</span>
+                            <span className="font-bold text-lg">安卓下载</span>
+                        </div>
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
