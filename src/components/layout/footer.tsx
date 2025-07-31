@@ -5,7 +5,7 @@ import { PubgLogo } from '@/components/icons/PubgLogo';
 export function Footer() {
   return (
     <footer className="border-t border-border/40 py-8">
-      <div className="container">
+      <div className="px-4 md:px-6">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="flex flex-col items-center gap-4 md:items-start">
             <Link href="/">
