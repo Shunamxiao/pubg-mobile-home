@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { PubgLogo } from '@/components/icons/PubgLogo';
 import { Button } from '@/components/ui/button';
 import { Gamepad2, Menu, Newspaper, Rss } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: Gamepad2 },
@@ -37,12 +37,16 @@ export function Header() {
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu className="h-5 w-5" />
+                  <span className="sr-only">Open Menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="left">
-                <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
-                  <PubgLogo />
-                </Link>
+                <SheetHeader className="mb-6">
+                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                  <Link href="/" className="flex items-center space-x-2">
+                    <PubgLogo />
+                  </Link>
+                </SheetHeader>
                 <nav className="flex flex-col space-y-4">
                   {navLinks.map(({ href, label, icon: Icon }) => (
                     <Link
