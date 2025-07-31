@@ -4,12 +4,38 @@ import { getArticleBySlug } from '@/lib/data';
 import { CommentSection } from '@/components/CommentSection';
 import { ContextualInfo } from '@/components/ContextualInfo';
 import { MarkdownContent } from '@/components/MarkdownContent';
+import type { Metadata, ResolvingMetadata } from 'next'
 
 type ArticlePageProps = {
   params: {
     slug: string;
   };
 };
+
+export async function generateMetadata(
+  { params }: ArticlePageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const article = getArticleBySlug(params.slug);
+
+  if (!article) {
+    return {
+      title: 'Article Not Found',
+    }
+  }
+ 
+  const previousImages = (await parent).openGraph?.images || []
+ 
+  return {
+    title: `${article.title} - PUBG Mobile`,
+    description: article.summary,
+    openGraph: {
+      title: article.title,
+      description: article.summary,
+      images: [article.imageUrl, ...previousImages],
+    },
+  }
+}
 
 export default function ArticlePage({ params }: ArticlePageProps) {
   const article = getArticleBySlug(params.slug);
