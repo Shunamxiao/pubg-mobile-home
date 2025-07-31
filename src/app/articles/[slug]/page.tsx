@@ -45,8 +45,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="bg-background">
-      <div className="relative w-full h-64 md:h-96">
+    <div className="bg-background mx-auto">
+      <div className="relative mx-auto w-full h-64 md:h-96">
         <Image
           src={article.imageUrl}
           alt={article.title}
@@ -58,7 +58,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
       </div>
 
-      <div className="container px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6">
         <article className="max-w-4xl mx-auto py-12 md:py-16 -mt-32 relative z-10">
           <header className="mb-8 text-center">
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4 text-shadow">{article.title}</h1>

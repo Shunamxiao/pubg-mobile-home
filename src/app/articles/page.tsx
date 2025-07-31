@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function ArticlesPage() {
   return (
-    <div className="container py-12 md:py-16">
+    <div className="container mx-auto py-12 md:py-16">
       <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-12 text-center">
         游戏文章与攻略
       </h1>
@@ -19,9 +19,9 @@ export default function ArticlesPage() {
                 src={article.imageUrl}
                 alt={article.title}
                 data-ai-hint={article.imageHint}
-                width={1312}
-                height={600}
-                className="w-full object-cover aspect-[1312/600]"
+                width={800}
+                height={400}
+                className="w-full object-cover aspect-video"
               />
             </Link>
             <CardHeader className="p-4">

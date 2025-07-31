@@ -21,9 +21,9 @@ export default function UpdatesPage() {
                     src={update.imageUrl}
                     alt={update.title}
                     data-ai-hint={update.imageHint}
-                    width={1312}
-                    height={600}
-                    className="w-full h-full object-cover aspect-[1312/600]"
+                    width={600}
+                    height={300}
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="md:col-span-2 p-6 flex flex-col">

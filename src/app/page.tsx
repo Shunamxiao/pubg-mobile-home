@@ -48,9 +48,9 @@ export default function Home() {
                 src={article.imageUrl}
                 alt={article.title}
                 data-ai-hint={article.imageHint}
-                width={1312}
-                height={600}
-                className="w-full object-cover aspect-[1312/600]"
+                width={800}
+                height={400}
+                className="w-full object-cover aspect-video"
                 />
             </Link>
             <CardHeader className="p-4">
@@ -74,7 +74,7 @@ export default function Home() {
 
       {/* Version Updates Section */}
       <section className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Version Updates</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">版本更新日志</h2>
         <div className="space-y-6">
           {updates.slice(0, 2).map((update) => (
             <Card key={update.slug} className="hover:shadow-lg transition-shadow duration-300">
@@ -85,9 +85,9 @@ export default function Home() {
                       src={update.imageUrl}
                       alt={update.title}
                       data-ai-hint={update.imageHint}
-                      width={1312}
-                      height={600}
-                      className="w-full h-full object-cover aspect-[1312/600]"
+                      width={600}
+                      height={300}
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="md:col-span-2 p-6">
@@ -113,7 +113,7 @@ export default function Home() {
       
       {/* Social Media Feed */}
       <section className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Official Channel</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">官方介绍视频</h2>
         <div className="aspect-video">
           <iframe
             className="w-full h-full rounded-lg shadow-lg"

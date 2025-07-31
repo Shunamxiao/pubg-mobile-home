@@ -20,8 +20,6 @@ export interface Update {
   imageHint: string;
 }
 
-const newImageUrl = 'https://cdn.apks.cc/blinko/524375317_1151220817046700_498758980995309757_n.jpg';
-
 export const articles: Article[] = [
   {
     slug: 'pubgm-login-solution-sim-card',
@@ -50,7 +48,7 @@ export const articles: Article[] = [
 这个小技巧虽然简单，但却能解决大部分新手的登录难题。如果你正被这个问题困扰，不妨立刻试试看！`,
     author: '老司机',
     date: 'August 22, 2024',
-    imageUrl: newImageUrl,
+    imageUrl: 'https://placehold.co/800x400.png',
     imageHint: 'phone sim card',
   },
   {
@@ -87,7 +85,7 @@ export const articles: Article[] = [
 选对加速器，你的“摸金”之路就成功了一半。祝你在地铁逃生模式中满载而归！`,
     author: '网络优化师',
     date: 'August 21, 2024',
-    imageUrl: newImageUrl,
+    imageUrl: 'https://placehold.co/800x400.png',
     imageHint: 'network connection speed',
   },
   {
@@ -126,7 +124,7 @@ export const articles: Article[] = [
 通过以上步骤，你就可以轻松绕开地区限制，畅玩包括《PUBG Mobile》在内的各种海外精彩游戏了。`,
     author: '苹果达人',
     date: 'August 20, 2024',
-    imageUrl: newImageUrl,
+    imageUrl: 'https://placehold.co/800x400.png',
     imageHint: 'mobile app store',
   },
   {
@@ -159,7 +157,7 @@ export const articles: Article[] = [
 现在，您已经成功安装了最新版的PUBG Mobile，准备好跳伞，开始您的吃鸡之旅吧！`,
     author: '官方运营团队',
     date: 'August 18, 2024',
-    imageUrl: newImageUrl,
+    imageUrl: 'https://placehold.co/800x400.png',
     imageHint: 'game download button',
   },
   {
@@ -194,7 +192,7 @@ export const articles: Article[] = [
 掌握以上基础，您就具备了在战场上生存的能力。祝您好运，大吉大利，今晚吃鸡！`,
     author: '战术分析师',
     date: 'August 16, 2024',
-    imageUrl: newImageUrl,
+    imageUrl: 'https://placehold.co/800x400.png',
     imageHint: 'player running',
   },
   {
@@ -238,8 +236,67 @@ export const articles: Article[] = [
 希望这些进阶技巧能帮助你主宰战场。我们决赛圈见！`,
     author: '吃鸡大师',
     date: 'August 14, 2024',
-    imageUrl: newImageUrl,
+    imageUrl: 'https://placehold.co/800x400.png',
     imageHint: 'sniper scope view',
+  },
+  {
+    slug: 'erangel-remastered-guide',
+    title: 'Mastering Erangel: A Guide to the Remastered Classic',
+    summary: 'The classic map of Erangel has been remastered. Discover the new locations, strategies, and secrets to dominate the battlefield.',
+    content: `>The iconic Erangel map has received a significant visual and tactical overhaul. Familiar locations now boast new structures, better cover, and enhanced graphical fidelity.
+
+# Key Changes
+- **Mylta Power, Quarry, and Prison:** These areas are now more complex, offering new opportunities for ambushes and strategic positioning.
+- **Georgopol Crates:** Previously overlooked, this area now offers more verticality.
+
+### Pro-Tips
+1.  **Ledge Grab:** Remember to use the new ledge grab mechanic to access rooftops and unexpected vantage points. This can give you a significant advantage in the final circles.
+2.  **Weapon Choice:** The M416 remains a versatile choice, but the Beryl M762 now packs an even bigger punch up close. Practice controlling its recoil in the training grounds to unlock its full potential.`,
+    author: 'PlayerUnknown',
+    date: 'August 15, 2024',
+    imageUrl: 'https://placehold.co/800x400.png',
+    imageHint: 'battlefield landscape',
+  },
+  {
+    slug: 'squad-tactics-101',
+    title: 'Squad Tactics 101: Communication is Key',
+    summary: 'Teamwork makes the dream work. Learn essential communication and positioning strategies to lead your squad to a chicken dinner.',
+    content: `Winning in squad mode is less about individual skill and more about coordinated teamwork. The foundation of any successful squad is clear, concise communication.
+
+### Roles & Communication
+- **Establish Roles:** Before the match begins: a leader/shot-caller, a sniper/support, and two entry fraggers.
+- **Use Markers:** Use the in-game markers religiously. Call out enemy positions using compass bearings ("Enemy at 285"), describe their equipment ("Level 3 helmet"), and state your intentions ("Pushing the blue house").
+
+### Positioning
+Avoid bunching up to minimize vulnerability to grenades and sprays. Maintain a perimeter, with each member covering a different angle. This "spread" allows you to gather more information and control a larger area.
+
+> When engaging, focus fire on a single target to down them quickly. A 4v3 advantage is a massive game-changer.`,
+    author: 'The Commander',
+    date: 'August 10, 2024',
+    imageUrl: 'https://placehold.co/800x400.png',
+    imageHint: 'team soldiers',
+  },
+  {
+    slug: 'new-weapon-analysis',
+    title: 'Weapon Analysis: The P90 Has Arrived',
+    summary: 'The P90 SMG is now available in airdrops. Is it worth chasing? We break down its strengths and weaknesses.',
+    content: `The latest addition to the airdrop-exclusive weapon pool is the P90 SMG. Chambered in 5.7mm, this weapon boasts a massive 50-round magazine and an incredibly high rate of fire.
+
+**Strengths:**
+- Its main strength is in close-quarters combat. The P90 can shred through opponents before they have a chance to react.
+- The large magazine means you can take on multiple enemies without reloading.
+
+**Weaknesses:**
+- Significant damage drop-off at medium to long ranges.
+- Its unique ammunition type means you can't restock from fallen enemies. You get what's in the crate, and that's it.
+
+***
+
+*Our verdict:* The P90 is a situational monster. If you're playing an aggressive, building-clearing style, it's one of the best weapons in the game. For players who prefer to fight from a distance, it might be better to stick with an AR.`,
+    author: 'Gunner',
+    date: 'August 5, 2024',
+    imageUrl: 'https://placehold.co/800x400.png',
+    imageHint: 'futuristic weapon',
   },
 ];
 
@@ -260,7 +317,7 @@ To help traverse the battlefield, all players are now equipped with a personal j
 
 This update also includes various quality-of-life improvements, a new season pass, and a rebalancing of several assault rifles.`,
         date: 'July 28, 2024',
-        imageUrl: newImageUrl,
+        imageUrl: 'https://placehold.co/600x300.png',
         imageHint: 'giant robot',
     },
     {
@@ -274,12 +331,10 @@ The **flying carpet** is a new two-person vehicle that allows for silent and swi
 
 This patch also introduced the new **AMR sniper rifle**, capable of one-shotting even a Level 3 helmet, and a host of bug fixes and performance optimizations.`,
         date: 'June 15, 2024',
-        imageUrl: newImageUrl,
+        imageUrl: 'https://placehold.co/600x300.png',
         imageHint: 'desert city',
     },
 ];
 
 export const getArticleBySlug = (slug: string) => articles.find(a => a.slug === slug);
-export const getUpdateBySlug = (slug:string) => updates.find(u => u.slug === slug);
-
-    
+export const getUpdateBySlug = (slug: string) => updates.find(u => u.slug === slug);
