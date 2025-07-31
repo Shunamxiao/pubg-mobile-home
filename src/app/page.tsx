@@ -47,9 +47,9 @@ export default function Home() {
                   src={article.imageUrl}
                   alt={article.title}
                   data-ai-hint={article.imageHint}
-                  width={800}
-                  height={400}
-                  className="w-full h-32 object-cover"
+                  width={1312}
+                  height={600}
+                  className="w-full object-cover aspect-[1312/600]"
                 />
               </Link>
               <CardHeader className="p-4">
@@ -79,13 +79,14 @@ export default function Home() {
             <Card key={update.slug} className="hover:shadow-lg transition-shadow duration-300">
               <Link href={`/updates/${update.slug}`}>
                 <div className="grid md:grid-cols-3 gap-0">
-                  <div className="md:col-span-1 relative min-h-[200px] rounded-t-lg md:rounded-l-lg md:rounded-t-none overflow-hidden">
+                  <div className="md:col-span-1 relative rounded-t-lg md:rounded-l-lg md:rounded-t-none overflow-hidden">
                     <Image
                       src={update.imageUrl}
                       alt={update.title}
                       data-ai-hint={update.imageHint}
-                      fill
-                      className="w-full h-full object-cover"
+                      width={1312}
+                      height={600}
+                      className="w-full h-full object-cover aspect-[1312/600]"
                     />
                   </div>
                   <div className="md:col-span-2 p-6">

@@ -16,14 +16,14 @@ export default function UpdatesPage() {
           <Card key={update.slug} className="hover:shadow-lg transition-shadow duration-300 overflow-hidden">
             <Link href={`/updates/${update.slug}`}>
               <div className="grid md:grid-cols-3 gap-0 bg-card">
-                <div className="md:col-span-1 relative min-h-[200px]">
+                <div className="md:col-span-1 relative">
                   <Image
                     src={update.imageUrl}
                     alt={update.title}
                     data-ai-hint={update.imageHint}
-                    layout="fill"
-                    objectFit="cover"
-                    className="w-full h-full"
+                    width={1312}
+                    height={600}
+                    className="w-full h-full object-cover aspect-[1312/600]"
                   />
                 </div>
                 <div className="md:col-span-2 p-6 flex flex-col">
