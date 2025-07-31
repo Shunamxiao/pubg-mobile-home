@@ -23,10 +23,10 @@ export function GameDownloadButtons() {
                 <DialogTrigger asChild>
                     <Button 
                       size="lg" 
-                      className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300" 
+                      className="animated-border-btn !p-0 w-[200px] h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 text-white" 
                       style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753971933326-1753971932556-apk_download.png')"}}
                     >
-                        <span className="sr-only">安卓下载</span>
+                        安卓下载
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
