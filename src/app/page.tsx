@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
         <Image
-          src="https://placehold.co/1920x1080.png"
+          src="https://www.pubgmobile.com/images/event/home/downloadbj.png"
           alt="PUBG Mobile battle scene"
           data-ai-hint="battle royale action"
           fill
