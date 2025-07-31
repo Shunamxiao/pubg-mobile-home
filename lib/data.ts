@@ -25,9 +25,9 @@ export const articles: Article[] = [
     slug: 'erangel-remastered-guide',
     title: 'Mastering Erangel: A Guide to the Remastered Classic',
     summary: 'The classic map of Erangel has been remastered. Discover the new locations, strategies, and secrets to dominate the battlefield.',
-    content: `The iconic Erangel map has received a significant visual and tactical overhaul. Familiar locations now boast new structures, better cover, and enhanced graphical fidelity.
+    content: `>The iconic Erangel map has received a significant visual and tactical overhaul. Familiar locations now boast new structures, better cover, and enhanced graphical fidelity.
 
-### Key Changes
+# Key Changes
 - **Mylta Power, Quarry, and Prison:** These areas are now more complex, offering new opportunities for ambushes and strategic positioning.
 - **Georgopol Crates:** Previously overlooked, this area now offers more verticality.
 

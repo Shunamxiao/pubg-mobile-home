@@ -38,7 +38,7 @@ export default function Home() {
       </section>
 
       {/* Latest Articles Section */}
-      <section className="container px-4 md:px-6 mt-[-4rem] relative z-20">
+      <section className="container mx-auto px-4 md:px-6 mt-[-4rem] relative z-20">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">最新文章</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.slice(0, 3).map((article) => (
@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* Version Updates Section */}
-      <section className="container px-4 md:px-6">
+      <section className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Version Updates</h2>
         <div className="space-y-6">
           {updates.slice(0, 2).map((update) => (
@@ -112,15 +112,15 @@ export default function Home() {
       </section>
       
       {/* Social Media Feed */}
-      <section className="container px-4 md:px-6">
+      <section className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Official Channel</h2>
         <div className="aspect-video">
           <iframe
             className="w-full h-full rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/uCd6tbUAy6o"
+            src="https://cdn.apks.cc/blinko/847dd6a4-18b0-4aa1-9847-956a819e816e.mp4"
             title="YouTube video player"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </div>
