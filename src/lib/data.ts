@@ -48,7 +48,7 @@ export const articles: Article[] = [
 这个小技巧虽然简单，但却能解决大部分新手的登录难题。如果你正被这个问题困扰，不妨立刻试试看！`,
     author: '老司机',
     date: 'August 22, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/kv3.jpg',
     imageHint: 'phone sim card',
   },
   {
@@ -85,7 +85,7 @@ export const articles: Article[] = [
 选对加速器，你的“摸金”之路就成功了一半。祝你在地铁逃生模式中满载而归！`,
     author: '网络优化师',
     date: 'August 21, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/part4.jpg',
     imageHint: 'network connection speed',
   },
   {
@@ -124,7 +124,7 @@ export const articles: Article[] = [
 通过以上步骤，你就可以轻松绕开地区限制，畅玩包括《PUBG Mobile》在内的各种海外精彩游戏了。`,
     author: '苹果达人',
     date: 'August 20, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/part6.jpg',
     imageHint: 'mobile app store',
   },
   {
@@ -157,7 +157,7 @@ export const articles: Article[] = [
 现在，您已经成功安装了最新版的PUBG Mobile，准备好跳伞，开始您的吃鸡之旅吧！`,
     author: '官方运营团队',
     date: 'August 18, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/part3.jpg',
     imageHint: 'game download button',
   },
   {
@@ -192,7 +192,7 @@ export const articles: Article[] = [
 掌握以上基础，您就具备了在战场上生存的能力。祝您好运，大吉大利，今晚吃鸡！`,
     author: '战术分析师',
     date: 'August 16, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://www.pubgmobile.com/images/event/home/rp.jpg',
     imageHint: 'player running',
   },
   {
@@ -236,7 +236,7 @@ export const articles: Article[] = [
 希望这些进阶技巧能帮助你主宰战场。我们决赛圈见！`,
     author: '吃鸡大师',
     date: 'August 14, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(1).webp',
     imageHint: 'sniper scope view',
   },
   {
@@ -254,7 +254,7 @@ export const articles: Article[] = [
 2.  **Weapon Choice:** The M416 remains a versatile choice, but the Beryl M762 now packs an even bigger punch up close. Practice controlling its recoil in the training grounds to unlock its full potential.`,
     author: 'PlayerUnknown',
     date: 'August 15, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(2).webp',
     imageHint: 'battlefield landscape',
   },
   {
@@ -273,7 +273,7 @@ Avoid bunching up to minimize vulnerability to grenades and sprays. Maintain a p
 > When engaging, focus fire on a single target to down them quickly. A 4v3 advantage is a massive game-changer.`,
     author: 'The Commander',
     date: 'August 10, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(4).webp',
     imageHint: 'team soldiers',
   },
   {
@@ -295,7 +295,7 @@ Avoid bunching up to minimize vulnerability to grenades and sprays. Maintain a p
 *Our verdict:* The P90 is a situational monster. If you're playing an aggressive, building-clearing style, it's one of the best weapons in the game. For players who prefer to fight from a distance, it might be better to stick with an AR.`,
     author: 'Gunner',
     date: 'August 5, 2024',
-    imageUrl: 'https://placehold.co/800x400.png',
+    imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(5).webp',
     imageHint: 'futuristic weapon',
   },
 ];
@@ -317,7 +317,7 @@ To help traverse the battlefield, all players are now equipped with a personal j
 
 This update also includes various quality-of-life improvements, a new season pass, and a rebalancing of several assault rifles.`,
         date: 'July 28, 2024',
-        imageUrl: 'https://placehold.co/600x300.png',
+        imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(5).webp',
         imageHint: 'giant robot',
     },
     {
@@ -331,7 +331,7 @@ The **flying carpet** is a new two-person vehicle that allows for silent and swi
 
 This patch also introduced the new **AMR sniper rifle**, capable of one-shotting even a Level 3 helmet, and a host of bug fixes and performance optimizations.`,
         date: 'June 15, 2024',
-        imageUrl: 'https://placehold.co/600x300.png',
+        imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(6).webp',
         imageHint: 'desert city',
     },
 ];

@@ -5,9 +5,9 @@ import { Gamepad2, Menu, Newspaper, Rss } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 
 const navLinks = [
-  { href: '/', label: 'Home', icon: Gamepad2 },
-  { href: '/articles', label: 'Articles', icon: Newspaper },
-  { href: '/updates', label: 'Updates', icon: Rss },
+  { href: '/', label: '首页', icon: Gamepad2 },
+  { href: '/articles', label: '资讯', icon: Newspaper },
+  { href: '/updates', label: '更新日志', icon: Rss },
 ];
 
 export function Header() {
@@ -64,7 +64,7 @@ export function Header() {
         <div className="hidden md:flex items-center">
           <Button asChild>
             <Link href="/#download">
-              Download Game
+              游戏下载
             </Link>
           </Button>
         </div>
