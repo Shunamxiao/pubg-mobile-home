@@ -38,7 +38,7 @@ export default function Home() {
       {/* Latest Articles Section */}
       <section className="container px-4 md:px-6">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Latest Articles</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
           {articles.slice(0, 3).map((article) => (
             <Card key={article.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <Link href={`/articles/${article.slug}`} className="block">
