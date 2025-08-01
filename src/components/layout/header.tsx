@@ -54,9 +54,15 @@ export function Header() {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+    // If we're already on the homepage, scroll to the section
+    if (window.location.pathname === '/') {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    } else {
+        // Otherwise, navigate to the homepage and then scroll
+        window.location.href = `/${href}`;
     }
     setIsSheetOpen(false); // Close sheet on link click
   };
@@ -76,9 +82,9 @@ export function Header() {
                   <SheetContent side="left">
                     <SheetHeader>
                       <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                      <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
+                      <Link href="/" className="flex items-center space-x-2">
                         <PubgLogo />
-                      </a>
+                      </Link>
                     </SheetHeader>
                     <nav className="flex flex-col space-y-4 mt-6">
                       {navLinks.map(({ href, label, sectionId }) => {
@@ -102,9 +108,9 @@ export function Header() {
                   </SheetContent>
                 </Sheet>
               </div>
-            <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
                 <PubgLogo />
-            </a>
+            </Link>
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
                 {navLinks.map(({ href, label, sectionId }) => (
                 <a
