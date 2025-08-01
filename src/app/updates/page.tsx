@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function UpdatesPage() {
   return (
-    <div className="container py-12 md:py-16">
+    <div className="container mx-auto py-12 md:py-16">
       <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-12 text-center">
         Version History & Patch Notes
       </h1>
