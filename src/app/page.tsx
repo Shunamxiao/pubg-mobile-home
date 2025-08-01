@@ -32,7 +32,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent -z-10" />
         <div className="container px-4 md:px-6 z-10">
-          <div className="max-w-3xl mx-auto flex flex-col items-center pb-8 pt-12 sm:pt-0">
+          <div className="max-w-3xl mx-auto flex flex-col items-center pb-8 pt-24 sm:pt-32">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 text-shadow-lg animate-fade-in-down">
               {siteConfig.hero.title}
             </h1>
@@ -108,14 +108,12 @@ export default function Home() {
       <section id={siteConfig.video.id} className="container mx-auto px-4 md:px-6 scroll-mt-20">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{siteConfig.video.title}</h2>
         <div className="aspect-video">
-          <iframe
+        <video
             className="w-full h-full rounded-lg shadow-lg"
+            controls
             src={siteConfig.video.url}
             title={siteConfig.video.playerTitle}
-            frameBorder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          />
         </div>
       </section>
 
