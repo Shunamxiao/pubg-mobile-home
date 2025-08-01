@@ -48,64 +48,68 @@ export default function Home() {
       {/* Latest Articles Section */}
       <section id="articles" className="container mx-auto px-4 md:px-6 scroll-mt-20">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">最新文章</h2>
-        <Accordion type="single" collapsible className="w-full">
+        <div className="space-y-4">
           {articles.map((article) => (
-            <AccordionItem value={article.slug} key={article.slug}>
-              <AccordionTrigger className="text-left hover:no-underline">
-                <div className="flex items-center gap-4">
-                  <Image
-                    src={article.imageUrl}
-                    alt={article.title}
-                    data-ai-hint={article.imageHint}
-                    width={100}
-                    height={100}
-                    className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md"
-                  />
-                  <div className="flex-1">
-                    <h3 className="font-bold text-base md:text-lg">{article.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1 hidden md:block">{article.summary}</p>
-                     <p className="text-xs text-muted-foreground mt-2">{article.date} by {article.author}</p>
+             <Card key={article.slug} className="hover:shadow-lg transition-shadow duration-300">
+                <Link href={`/articles/${article.slug}`} className="grid md:grid-cols-12 gap-0 md:gap-6 group">
+                  <div className="md:col-span-4 relative rounded-t-lg md:rounded-l-lg md:rounded-t-none overflow-hidden aspect-video md:aspect-square">
+                    <Image
+                      src={article.imageUrl}
+                      alt={article.title}
+                      data-ai-hint={article.imageHint}
+                      fill
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="prose prose-invert prose-lg max-w-none text-foreground/80 p-4 bg-card/20 rounded-b-lg">
-                <MarkdownContent content={article.content} />
-              </AccordionContent>
-            </AccordionItem>
+                  <div className="md:col-span-8 p-6 flex flex-col">
+                    <CardHeader className="p-0 mb-2">
+                        <CardTitle className="group-hover:text-primary transition-colors">{article.title}</CardTitle>
+                        <CardDescription>{article.date} by {article.author}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="p-0 flex-grow">
+                      <p className="text-muted-foreground line-clamp-2 md:line-clamp-3">{article.summary}</p>
+                    </CardContent>
+                    <div className="p-0 mt-4 flex justify-end">
+                       <Button variant="outline">
+                          Read More <ArrowRight className="ml-2 h-4 w-4" />
+                       </Button>
+                    </div>
+                  </div>
+                </Link>
+            </Card>
           ))}
-        </Accordion>
+        </div>
       </section>
 
       {/* Version Updates Section */}
       <section id="updates" className="container mx-auto px-4 md:px-6 scroll-mt-20">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">版本更新日志</h2>
-        <div className="space-y-6">
+        <Accordion type="single" collapsible className="w-full">
           {updates.map((update) => (
-            <Card key={update.slug} className="hover:shadow-lg transition-shadow duration-300">
-                <div className="grid md:grid-cols-3 gap-0">
-                  <div className="md:col-span-1 relative rounded-t-lg md:rounded-l-lg md:rounded-t-none overflow-hidden">
-                    <Image
-                      src={update.imageUrl}
-                      alt={update.title}
-                      data-ai-hint={update.imageHint}
-                      width={600}
-                      height={300}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:col-span-2 p-6">
-                    <CardHeader className="p-0 mb-2">
-                        <CardTitle>{update.title} - v{update.version}</CardTitle>
-                        <CardDescription>{update.date}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-0">
-                      <p className="text-muted-foreground">{update.summary}</p>
-                    </CardContent>
+            <AccordionItem value={update.slug} key={update.slug}>
+              <AccordionTrigger className="text-left hover:no-underline">
+                <div className="flex items-start md:items-center gap-4">
+                  <Image
+                    src={update.imageUrl}
+                    alt={update.title}
+                    data-ai-hint={update.imageHint}
+                    width={100}
+                    height={100}
+                    className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md"
+                  />
+                  <div className="flex-1">
+                    <h3 className="font-bold text-base md:text-lg">{update.title} - v{update.version}</h3>
+                    <p className="text-sm text-muted-foreground mt-1 hidden md:block">{update.summary}</p>
+                     <p className="text-xs text-muted-foreground mt-2">{update.date}</p>
                   </div>
                 </div>
-            </Card>
+              </AccordionTrigger>
+              <AccordionContent className="prose prose-invert max-w-none text-foreground/80 p-4 bg-card/20 rounded-b-lg">
+                <MarkdownContent content={update.content} />
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </section>
       
       {/* Social Media Feed */}
@@ -130,5 +134,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

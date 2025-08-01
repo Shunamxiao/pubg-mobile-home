@@ -336,4 +336,5 @@ This patch also introduced the new **AMR sniper rifle**, capable of one-shotting
     },
 ];
 
-    
+export const getArticleBySlug = (slug: string) => articles.find(a => a.slug === slug);
+export const getUpdateBySlug = (slug: string) => updates.find(u => u.slug === slug);
