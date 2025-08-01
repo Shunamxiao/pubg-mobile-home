@@ -37,6 +37,7 @@ const prompt = ai.definePrompt({
   Content: {{{content}}}
 
   Suggestions should be concise and directly related to the content provided. Limit the number of suggestions to 3.
+  All suggestions must be in Chinese.
   Format the suggestions as a JSON array of strings.
   `,
 });
