@@ -108,12 +108,13 @@ export default function Home() {
       <section id={siteConfig.video.id} className="container mx-auto px-4 md:px-6 scroll-mt-20">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{siteConfig.video.title}</h2>
         <div className="aspect-video">
-          <video
+          <iframe
             className="w-full h-full rounded-lg shadow-lg"
-            controls
             src={siteConfig.video.url}
             title={siteConfig.video.playerTitle}
-          />
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
 
