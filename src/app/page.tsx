@@ -110,9 +110,9 @@ export default function Home() {
         <div className="aspect-video">
           <iframe
             className="w-full h-full rounded-lg shadow-lg"
-            src={siteConfig.video.url}
+            src={`${siteConfig.video.url}?muted=1`}
             title={siteConfig.video.playerTitle}
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </div>
