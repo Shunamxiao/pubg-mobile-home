@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { PubgLogo } from '@/components/icons/PubgLogo';
 import { Button } from '@/components/ui/button';
-import { Gamepad2, Menu, Newspaper, Rss } from 'lucide-react';
+import { Gamepad2, Menu, Newspaper, Rss, Video } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
@@ -11,6 +11,7 @@ const navLinks = [
   { href: '#home', label: '首页', icon: Gamepad2, sectionId: 'home' },
   { href: '#articles', label: '资讯', icon: Newspaper, sectionId: 'articles' },
   { href: '#updates', label: '更新日志', icon: Rss, sectionId: 'updates' },
+  { href: '#video', label: '官方频道', icon: Video, sectionId: 'video' },
 ];
 
 export function Header() {
@@ -97,8 +98,10 @@ export function Header() {
                     href={href}
                     onClick={(e) => handleLinkClick(e, href)}
                     className={cn(
-                      "transition-colors hover:text-foreground/80",
-                       activeSection === sectionId ? 'text-foreground' : 'text-foreground/60'
+                      "relative transition-colors hover:text-foreground/80 nav-link",
+                      activeSection === sectionId
+                        ? 'text-foreground nav-link-active'
+                        : 'text-foreground/60'
                     )}
                 >
                     {label}
@@ -118,5 +121,3 @@ export function Header() {
     </header>
   );
 }
-
-    
