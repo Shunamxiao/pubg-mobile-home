@@ -12,7 +12,7 @@ export function PubgLogo() {
         className="rounded-md"
       />
       <span className="font-bold text-lg text-white whitespace-nowrap">
-        {siteConfig.header.logo.text}
+        {siteConfig.name}
       </span>
     </div>
   );

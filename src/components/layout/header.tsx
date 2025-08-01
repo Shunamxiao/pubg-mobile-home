@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { PubgLogo } from '@/components/icons/PubgLogo';
 import { Button } from '@/components/ui/button';
 import { Gamepad2, Menu, Newspaper, Rss, Video } from 'lucide-react';
@@ -15,13 +14,22 @@ const navIcons: { [key: string]: React.ElementType } = {
   video: Video,
 };
 
-
 export function Header() {
   const [activeSection, setActiveSection] = useState('home');
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  
+  const navLinks = [
+    { href: '#home', label: '首页', sectionId: 'home' },
+    ...siteConfig.sections.map(section => ({
+      href: `#${section.id}`,
+      label: section.navLabel,
+      sectionId: section.id,
+    })),
+    { href: `#${siteConfig.video.id}`, label: siteConfig.video.navLabel, sectionId: siteConfig.video.id },
+  ];
 
   useEffect(() => {
-    const sections = siteConfig.header.navLinks.map(link => document.getElementById(link.sectionId));
+    const sections = navLinks.map(link => document.getElementById(link.sectionId));
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -40,7 +48,7 @@ export function Header() {
         if (section) observer.unobserve(section);
       });
     };
-  }, []);
+  }, [navLinks]);
   
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -72,7 +80,7 @@ export function Header() {
                       </a>
                     </SheetHeader>
                     <nav className="flex flex-col space-y-4 mt-6">
-                      {siteConfig.header.navLinks.map(({ href, label, sectionId }) => {
+                      {navLinks.map(({ href, label, sectionId }) => {
                         const Icon = navIcons[sectionId];
                         return (
                           <a
@@ -97,7 +105,7 @@ export function Header() {
                 <PubgLogo />
             </a>
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-                {siteConfig.header.navLinks.map(({ href, label, sectionId }) => (
+                {navLinks.map(({ href, label, sectionId }) => (
                 <a
                     key={label}
                     href={href}

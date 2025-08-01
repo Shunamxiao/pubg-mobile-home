@@ -1,4 +1,4 @@
-import { getArticleBySlug } from '@/lib/data';
+import { getArticleBySlug, siteConfig } from '@/config/site';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { MarkdownContent } from '@/components/MarkdownContent';
@@ -14,7 +14,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
 
   if (!article) {
-    return {};
+    return {
+      title: `Article not found - ${siteConfig.name}`,
+    };
   }
 
   return {
@@ -52,7 +54,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             {article.title}
           </h1>
           <p className="text-muted-foreground text-sm">
-            Posted on {article.date} by {article.author}
+            Posted on {article.date} {article.author && `by ${article.author}`}
           </p>
         </header>
 
