@@ -6,20 +6,22 @@ import { Button } from '@/components/ui/button';
 import { Gamepad2, Menu, Newspaper, Rss, Video } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { siteConfig } from '@/config/site';
 
-const navLinks = [
-  { href: '#home', label: '首页', icon: Gamepad2, sectionId: 'home' },
-  { href: '#articles', label: '资讯', icon: Newspaper, sectionId: 'articles' },
-  { href: '#updates', label: '更新日志', icon: Rss, sectionId: 'updates' },
-  { href: '#video', label: '官方频道', icon: Video, sectionId: 'video' },
-];
+const navIcons: { [key: string]: React.ElementType } = {
+  home: Gamepad2,
+  articles: Newspaper,
+  updates: Rss,
+  video: Video,
+};
+
 
 export function Header() {
   const [activeSection, setActiveSection] = useState('home');
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
-    const sections = navLinks.map(link => document.getElementById(link.sectionId));
+    const sections = siteConfig.header.navLinks.map(link => document.getElementById(link.sectionId));
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -70,20 +72,23 @@ export function Header() {
                       </a>
                     </SheetHeader>
                     <nav className="flex flex-col space-y-4 mt-6">
-                      {navLinks.map(({ href, label, icon: Icon, sectionId }) => (
-                        <a
-                          key={label}
-                          href={href}
-                          onClick={(e) => handleLinkClick(e, href)}
-                          className={cn(
-                            "flex items-center space-x-2 text-lg font-medium hover:text-foreground",
-                             activeSection === sectionId ? 'text-foreground' : 'text-foreground/60'
-                          )}
-                        >
-                          <Icon className="h-5 w-5" />
-                          <span>{label}</span>
-                        </a>
-                      ))}
+                      {siteConfig.header.navLinks.map(({ href, label, sectionId }) => {
+                        const Icon = navIcons[sectionId];
+                        return (
+                          <a
+                            key={label}
+                            href={href}
+                            onClick={(e) => handleLinkClick(e, href)}
+                            className={cn(
+                              "flex items-center space-x-2 text-lg font-medium hover:text-foreground",
+                              activeSection === sectionId ? 'text-foreground' : 'text-foreground/60'
+                            )}
+                          >
+                            {Icon && <Icon className="h-5 w-5" />}
+                            <span>{label}</span>
+                          </a>
+                        )
+                      })}
                     </nav>
                   </SheetContent>
                 </Sheet>
@@ -92,7 +97,7 @@ export function Header() {
                 <PubgLogo />
             </a>
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-                {navLinks.map(({ href, label, sectionId }) => (
+                {siteConfig.header.navLinks.map(({ href, label, sectionId }) => (
                 <a
                     key={label}
                     href={href}

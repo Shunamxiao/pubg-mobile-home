@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { MarkdownContent } from '@/components/MarkdownContent';
+import { siteConfig } from '@/config/site';
 
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative w-full aspect-video flex items-center justify-center text-center text-white">
         <Image
-          src="https://cdn.apks.cc/blinko/1753975129551-1753975127906-downloadbj.png"
+          src={siteConfig.hero.backgroundImage}
           alt="PUBG Mobile下载,地铁逃生下载"
           data-ai-hint="battle royale action"
           fill
@@ -32,11 +33,10 @@ export default function Home() {
         <div className="container px-4 md:px-6 z-10">
           <div className="max-w-3xl mx-auto flex flex-col items-center pb-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 text-shadow-lg animate-fade-in-down">
-            史诗级大逃杀巨作 
+              {siteConfig.hero.title}
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-foreground/80 max-w-2xl mb-8 animate-fade-in-up [animation-delay:0.2s]">
-            超多活动，等你游玩,
-            在PUBG MOBILE登上颠峰，尽情开火。 PUBG MOBILE是原创的大逃杀手机游戏，也是手机射击游戏巅峰之作。
+              {siteConfig.hero.description}
             </p>
             <div id="download" className="animate-fade-in-up [animation-delay:0.4s]">
                 <GameDownloadButtons />
@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* Latest Articles Section */}
       <section id="articles" className="container mx-auto px-4 md:px-6 scroll-mt-20">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">最新文章</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{siteConfig.sections.articles.title}</h2>
         <div className="space-y-4">
           {articles.map((article) => (
              <Card key={article.slug} className="hover:shadow-lg transition-shadow duration-300">
@@ -83,7 +83,7 @@ export default function Home() {
 
       {/* Version Updates Section */}
       <section id="updates" className="container mx-auto px-4 md:px-6 scroll-mt-20">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">版本更新日志</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{siteConfig.sections.updates.title}</h2>
         <Accordion type="single" collapsible className="w-full">
           {updates.map((update) => (
             <AccordionItem value={update.slug} key={update.slug}>
@@ -114,12 +114,12 @@ export default function Home() {
       
       {/* Social Media Feed */}
       <section id="video" className="container mx-auto px-4 md:px-6 scroll-mt-20">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">官方介绍视频</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{siteConfig.sections.video.title}</h2>
         <div className="aspect-video">
           <iframe
             className="w-full h-full rounded-lg shadow-lg"
-            src="https://cdn.apks.cc/blinko/847dd6a4-18b0-4aa1-9847-956a819e816e.mp4"
-            title="YouTube video player"
+            src={siteConfig.video.url}
+            title={siteConfig.video.title}
             frameBorder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

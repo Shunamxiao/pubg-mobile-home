@@ -10,18 +10,19 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import Link from 'next/link';
+import { siteConfig } from '@/config/site';
 
 export function GameDownloadButtons() {
     return (
         <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="animated-border-btn !p-0 w-[180px] h-[52px] sm:w-[200px] sm:h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753972567787-1753972566208-google_apk_download.png')"}}>
-                <Link href="https://play.google.com/store/apps/details?id=com.tencent.ig" target="_blank">
-                    <span className="sr-only">Download on Google Play</span>
+            <Button asChild size="lg" className="animated-border-btn !p-0 w-[180px] h-[52px] sm:w-[200px] sm:h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: `url('${siteConfig.downloads.googlePlay.backgroundImage}')`}}>
+                <Link href={siteConfig.downloads.googlePlay.url} target="_blank">
+                    <span className="sr-only">{siteConfig.downloads.googlePlay.srText}</span>
                 </Link>
             </Button>
-            <Button asChild size="lg" className="animated-border-btn !p-0 w-[180px] h-[52px] sm:w-[200px] sm:h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753972022261-1753972021905-app_store.png')"}}>
-                <Link href="https://apps.apple.com/hk/app/pubg-mobile/id1330123889">
-                    <span className="sr-only">Download on the App Store</span>
+            <Button asChild size="lg" className="animated-border-btn !p-0 w-[180px] h-[52px] sm:w-[200px] sm:h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 border border-white/50" style={{backgroundImage: `url('${siteConfig.downloads.appStore.backgroundImage}')`}}>
+                <Link href={siteConfig.downloads.appStore.url}>
+                    <span className="sr-only">{siteConfig.downloads.appStore.srText}</span>
                 </Link>
             </Button>
             <Dialog>
@@ -29,30 +30,30 @@ export function GameDownloadButtons() {
                     <Button 
                       size="lg" 
                       className="animated-border-btn !p-0 w-[180px] h-[52px] sm:w-[200px] sm:h-[58px] bg-cover bg-center hover:scale-105 transition-transform duration-300 text-white border border-white/50 flex items-center justify-center" 
-                      style={{backgroundImage: "url('https://cdn.apks.cc/blinko/1753971933326-1753971932556-apk_download.png')"}}
+                      style={{backgroundImage: `url('${siteConfig.downloads.apk.backgroundImage}')`}}
                     >
                         <div className="flex flex-col items-center leading-tight scale-90 sm:scale-100">
-                            <span className="text-xs font-medium">Android Download</span>
-                            <span className="font-bold text-lg">安卓下载</span>
+                            <span className="text-xs font-medium">{siteConfig.downloads.apk.line1}</span>
+                            <span className="font-bold text-lg">{siteConfig.downloads.apk.line2}</span>
                         </div>
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                        <DialogTitle>选择下载渠道</DialogTitle>
+                        <DialogTitle>{siteConfig.downloads.apk.dialog.title}</DialogTitle>
                         <DialogDescription>
-                            请选择您偏好的下载方式。
+                            {siteConfig.downloads.apk.dialog.description}
                         </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
                         <Button asChild size="lg">
-                            <Link href="https://www.123pan.com/s/4H3LVv-DykI" target="_blank">
+                            <Link href={siteConfig.downloads.apk.dialog.panUrl} target="_blank">
                                 <DownloadCloud className="mr-2"/>
                                 网盘下载
                             </Link>
                         </Button>
                         <Button asChild size="lg" variant="secondary">
-                             <Link href="https://f.gbcass.com/PUBGMOBILE_Global_3.9.0_uawebsite_livik01_9275A2699.apk" target="_blank">
+                             <Link href={siteConfig.downloads.apk.dialog.officialUrl} target="_blank">
                                 <Globe className="mr-2"/>
                                 官网下载
                              </Link>

@@ -1,6 +1,6 @@
-import { Github, Twitter, Youtube } from 'lucide-react';
 import Link from 'next/link';
 import { PubgLogo } from '@/components/icons/PubgLogo';
+import { siteConfig } from '@/config/site';
 
 export function Footer() {
   return (
@@ -12,24 +12,12 @@ export function Footer() {
                 <PubgLogo />
             </Link>
             <p className="text-sm text-muted-foreground text-center md:text-left max-w-xs">
-            推荐收藏，分享给您的好友！是您获取PUBG Mobile新闻、更新和社区信息的最终目的地。
-            这是一个非官方的粉丝自制网站。
+                {siteConfig.footer.description}
             </p>
             </div>
-            {/* <div className="flex items-center space-x-4">
-            <Link href="#" aria-label="Youtube" className="text-muted-foreground hover:text-foreground">
-                <Youtube className="h-6 w-6" />
-            </Link>
-            <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-foreground">
-                <Twitter className="h-6 w-6" />
-            </Link>
-            <Link href="#" aria-label="Github" className="text-muted-foreground hover:text-foreground">
-                <Github className="h-6 w-6" />
-            </Link>
-            </div> */}
         </div>
         <div className="mt-6 text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} PUBG Mobile Hub. All rights reserved. Game content and materials are trademarks and copyrights of their respective publisher and its licensors.
+            {siteConfig.footer.copyright.replace('{year}', new Date().getFullYear().toString())}
         </div>
       </div>
     </footer>

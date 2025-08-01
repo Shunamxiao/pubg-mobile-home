@@ -3,21 +3,19 @@ import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
-
-const pageTitle = 'PUBG Mobile官网 | 下载、更新、攻略 - 官方正版入口';
-const pageDescription = '欢迎访问PUBG Mobile官网，提供最新游戏下载、更新日志、游戏攻略和玩家社区，支持安卓与iOS系统，一站式掌握刺激战场动态。';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: {
-    default: pageTitle,
-    template: `%s - PUBG Mobile官网`,
+    default: siteConfig.seo.title,
+    template: `%s - ${siteConfig.seo.title}`,
   },
-  description: pageDescription,
-  keywords: ['PUBG Mobile', 'PUBG Mobile 官网', 'PUBG Mobile 下载', '吃鸡手游', '刺激战场', '地铁逃生', '和平精英国际服', 'PUBG Mobile 更新', 'PUBG Mobile 攻略', 'PUBG Mobile 新手教程', 'PUBG Mobile 安卓下载', 'PUBG Mobile iOS下载'],
+  description: siteConfig.seo.description,
+  keywords: siteConfig.seo.keywords,
   openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    images: ['https://cdn.apks.cc/blinko/1753974441995-1753974441505-share.jpg'],
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    images: [siteConfig.seo.ogImage],
   },
 };
 
