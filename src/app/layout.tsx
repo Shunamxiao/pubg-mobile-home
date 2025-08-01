@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
@@ -27,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className="dark">
+    <html lang="zh-Hans" className="dark">
       <body className="font-body antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
           <Header />
@@ -39,3 +40,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    

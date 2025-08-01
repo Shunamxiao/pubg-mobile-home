@@ -1,3 +1,4 @@
+
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -76,12 +77,12 @@ export function Header() {
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">
                       <Menu className="h-5 w-5" />
-                      <span className="sr-only">Open Menu</span>
+                      <span className="sr-only">打开菜单</span>
                     </Button>
                   </SheetTrigger>
                   <SheetContent side="left">
                     <SheetHeader>
-                      <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                      <SheetTitle className="sr-only">主菜单</SheetTitle>
                       <Link href="/" className="flex items-center space-x-2">
                         <PubgLogo />
                       </Link>
@@ -141,3 +142,5 @@ export function Header() {
     </header>
   );
 }
+
+    

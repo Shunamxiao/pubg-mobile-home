@@ -2,10 +2,10 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-    name: 'PUBG Mobile',
+    name: 'PUBG Mobile 中心',
     seo: {
         title: '官网 | 下载、更新、攻略 - 官方正版入口',
-        description: '欢迎访问PUBG Mobile官网，提供最新游戏下载、更新日志、游戏攻略和玩家社区，支持安卓与iOS系统，一站式掌握刺激战场动态。',
+        description: '欢迎访问PUBG Mobile中心，提供最新游戏下载、更新日志、游戏攻略和玩家社区，支持安卓与iOS系统，一站式掌握刺激战场动态。',
         keywords: ['PUBG Mobile', 'PUBG Mobile 官网', 'PUBG Mobile 下载', '吃鸡手游', '刺激战场', '地铁逃生', '和平精英国际服', 'PUBG Mobile 更新', 'PUBG Mobile 攻略', 'PUBG Mobile 新手教程', 'PUBG Mobile 安卓下载', 'PUBG Mobile iOS下载'],
         ogImage: 'https://cdn.apks.cc/blinko/1753974441995-1753974441505-share.jpg',
     },
@@ -24,12 +24,12 @@ export const siteConfig = {
         googlePlay: {
             url: 'https://play.google.com/store/apps/details?id=com.tencent.ig',
             backgroundImage: 'https://cdn.apks.cc/blinko/1753972567787-1753972566208-google_apk_download.png',
-            srText: 'Download on Google Play',
+            srText: '在 Google Play 下载',
         },
         appStore: {
             url: 'https://apps.apple.com/hk/app/pubg-mobile/id1330123889',
             backgroundImage: 'https://cdn.apks.cc/blinko/1753972022261-1753972021905-app_store.png',
-            srText: 'Download on the App Store',
+            srText: '在 App Store 下载',
         },
         apk: {
             backgroundImage: 'https://cdn.apks.cc/blinko/1753971933326-1753971932556-apk_download.png',
@@ -47,12 +47,12 @@ export const siteConfig = {
         id: 'video',
         title: '官方介绍视频',
         url: 'https://cdn.apks.cc/blinko/847dd6a4-18b0-4aa1-9847-956a819e816e.mp4',
-        playerTitle: 'Official Introduction Video',
+        playerTitle: '官方介绍视频',
         navLabel: '官方频道',
     },
     footer: {
-        description: '推荐收藏，分享给您的好友！是您获取PUBG Mobile新闻、更新和社区信息的最终目的地。这是一个非官方的粉丝自制网站。',
-        copyright: '© {year} PUBG Mobile Hub. All rights reserved. Game content and materials are trademarks and copyrights of their respective publisher and its licensors.',
+        description: '推荐收藏，分享给您的好友！这里是您获取《PUBG Mobile》新闻、更新和社区信息的最终目的地。这是一个非官方的粉丝自制网站。',
+        copyright: '© {year} PUBG Mobile 中心. 保留所有权利. 游戏内容和材料均为其各自发行商及其许可人的商标和版权。',
     },
     sections: [
         {
@@ -62,9 +62,9 @@ export const siteConfig = {
             items: [
                 {
                     slug: 'pubgm-login-solution-sim-card',
-                    title: 'PUBG Mobile登录失败/卡加载？新用户必读的“拔卡”终极解决方案',
-                    summary: '遇到PUBG Mobile国际服登录不了、一直卡在加载画面的问题？这通常不是网络问题，而是区域限制所致。本文将详细教你如何通过最简单的“拔SIM卡”方法，顺利进入游戏，解决新玩家的燃眉之急。',
-                    content: `## 为什么我的PUBG Mobile进不去？
+                    title: '《PUBG Mobile》登录失败/卡加载？新用户必读的“拔卡”终极解决方案',
+                    summary: '遇到《PUBG Mobile》国际服登录不了、一直卡在加载画面的问题？这通常不是网络问题，而是区域限制所致。本文将详细教你如何通过最简单的“拔SIM卡”方法，顺利进入游戏，解决新玩家的燃眉之急。',
+                    content: `## 为什么我的《PUBG Mobile》进不去？
 
 很多新玩家在首次安装并登录《PUBG Mobile》国际服时，会遇到一个令人困惑的问题：游戏一直卡在加载界面，或者提示“服务器没有响应”、“登录失败”。即使开了游戏加速器，问题依旧。
 
@@ -86,13 +86,13 @@ export const siteConfig = {
 
 这个小技巧虽然简单，但却能解决大部分新手的登录难题。如果你正被这个问题困扰，不妨立刻试试看！`,
                     author: '老司机',
-                    date: 'August 22, 2024',
+                    date: '2024年8月22日',
                     imageUrl: 'https://cdn.apks.cc/blinko/kv3.jpg',
                     imageHint: 'phone sim card',
                   },
                   {
                     slug: 'pubgm-metro-royale-accelerator-recommendation',
-                    title: 'PUBG Mobile地铁逃生加速器哪个好？告别高延迟、掉线，稳定“摸金”必备利器',
+                    title: '《PUBG Mobile》地铁逃生加速器哪个好？告别高延迟、掉线，稳定“摸金”必备利器',
                     summary: '玩《PUBG Mobile》地铁逃生模式，最怕的就是关键时刻网络延迟、掉线，导致“辛辛苦苦几十年，一朝回到解放前”。本文为你深度分析并推荐几款稳定高效的游戏加速器，助你获得流畅的网络体验，成为地铁里的常胜将军。',
                     content: `## 地铁逃生模式：网络稳定是第一生产力
         
@@ -108,7 +108,7 @@ export const siteConfig = {
 
 市面上的加速器琳琅满目，选择时可以关注以下几点：
 
-*   **专线节点**：是否提供针对PUBG Mobile的优化专线，特别是亚服、日韩等热门服务器节点。
+*   **专线节点**：是否提供《PUBG Mobile》的优化专线，特别是亚服、日韩等热门服务器节点。
 *   **稳定性**：加速效果是否稳定，会不会频繁断流。可以先通过试用或选择有口碑的老牌加速器。
 *   **延迟表现**：加速后的ping值能降低到多少。一般来说，绿色ping值（100ms以下）就能保证流畅游戏。
 *   **价格与服务**：月费、季费等价格是否合理，客服响应是否及时。
@@ -123,13 +123,13 @@ export const siteConfig = {
 
 选对加速器，你的“摸金”之路就成功了一半。祝你在地铁逃生模式中满载而归！`,
                     author: '网络优化师',
-                    date: 'August 21, 2024',
+                    date: '2024年8月21日',
                     imageUrl: 'https://cdn.apks.cc/blinko/part4.jpg',
                     imageHint: 'network connection speed',
                   },
                   {
                     slug: 'apple-app-store-switch-region-guide',
-                    title: '如何在iPhone/iPad上切换App Store到港澳台区，下载PUBG Mobile等海外游戏？',
+                    title: '如何在iPhone/iPad上切换App Store到港澳台区，下载《PUBG Mobile》等海外游戏？',
                     summary: '想玩《PUBG Mobile》国际服，却发现在国区App Store里搜不到？别担心，这只是因为游戏没有在国区上架。本文将提供详细的图文教程，教你如何轻松将你的Apple ID切换到香港、澳门或台湾地区，顺利下载游戏。',
                     content: `## 前提准备：一个非国区的Apple ID
 
@@ -162,7 +162,7 @@ export const siteConfig = {
 
 通过以上步骤，你就可以轻松绕开地区限制，畅玩包括《PUBG Mobile》在内的各种海外精彩游戏了。`,
                     author: '苹果达人',
-                    date: 'August 20, 2024',
+                    date: '2024年8月20日',
                     imageUrl: 'https://cdn.apks.cc/blinko/part6.jpg',
                     imageHint: 'mobile app store',
                   },
@@ -176,33 +176,35 @@ export const siteConfig = {
                 {
                     slug: 'version-3-2-0',
                     version: '3.2.0',
-                    title: 'Version 3.2: Mecha Fusion',
-                    summary: 'The Mecha Fusion update is here! Pilot giant mechs, explore the new Steel Ark, and master the new jetpack mechanics.',
-                    content: `Version 3.2 introduces the thrilling Mecha Fusion mode. Players can now find and pilot powerful mechs, each with unique abilities.
+                    title: '3.2版本：机甲聚变',
+                    summary: '机甲聚变更新现已上线！驾驶巨型机甲，探索全新的钢铁方舟，并掌握全新的喷气背包机制。',
+                    content: `## 3.2版本：机甲聚变更新
 
-- **The Strider:** An agile mech perfect for scouting.
-- **The Leviathan:** A heavily armed beast capable of laying down devastating firepower.
+3.2版本引入了激动人心的机甲聚变模式。玩家现在可以找到并驾驶强大的机甲，每种机甲都有独特的能力。
 
-A new point of interest, the **Steel Ark**, has been added to Erangel. This massive flying fortress is a high-risk, high-reward drop location packed with top-tier loot.
+- **行者号**：一种适合侦察的敏捷机甲。
+- **利维坦号**：一种重武装野兽，能够施展毁灭性的火力。
 
-To help traverse the battlefield, all players are now equipped with a personal jetpack, allowing for short bursts of flight and incredible mobility.
+一个新的地点——**钢铁方舟**——已被添加到艾伦格地图中。这座巨大的飞行堡垒是一个高风险、高回报的降落点，充满了顶级战利品。
 
-This update also includes various quality-of-life improvements, a new season pass, and a rebalancing of several assault rifles.`,
-                    date: 'July 28, 2024',
+为了帮助穿越战场，所有玩家现在都配备了个人喷气背包，可以进行短暂的飞行，实现令人难以置信的机动性。
+
+本次更新还包括各种生活质量改进、新的赛季通行证以及对几种突击步枪的重新平衡。`,
+                    date: '2024年7月28日',
                     imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(5).webp',
                     imageHint: 'giant robot',
                 },
                 {
                     slug: 'version-3-1-0',
                     version: '3.1.0',
-                    title: 'Version 3.1: Arabian Nights',
-                    summary: 'Step into a world of magic and mystery with the Arabian Nights update. Discover the new Nimbus Island and ride the flying carpet.',
-                    content: `The Arabian Nights update brings a touch of magic to the battlegrounds. The new Nimbus Island is a vibrant, treasure-filled location with interactive elements. Ring gongs to summon supplies or search for the magical genie who can grant you a wish for powerful loot.
+                    title: '3.1版本：天方夜谭',
+                    summary: '通过天方夜谭更新，步入一个充满魔法和神秘的世界。发现全新的神灯岛，并驾驭飞毯。',
+                    content: `天方夜谭更新为战场带来了一丝魔力。全新的神灯岛是一个充满活力、宝藏丰富的地点，拥有互动元素。敲响锣鼓召唤补给，或者寻找可以满足你获得强大战利品愿望的神灯精灵。
         
-The **flying carpet** is a new two-person vehicle that allows for silent and swift transportation across the map. It's perfect for stealthy rotations.
+**飞毯**是一种全新的双人载具，可以在地图上进行安静而迅速的移动，非常适合隐蔽的转移。
         
-This patch also introduced the new **AMR sniper rifle**, capable of one-shotting even a Level 3 helmet, and a host of bug fixes and performance optimizations.`,
-                    date: 'June 15, 2024',
+此补丁还引入了全新的**AMR狙击步枪**，即使是3级头盔也能一枪击破，并修复了大量错误和进行了性能优化。`,
+                    date: '2024年6月15日',
                     imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(6).webp',
                     imageHint: 'desert city',
                 },
@@ -235,5 +237,7 @@ export interface Article {
   
 export interface Update extends Article {}
   
+
+    
 
     

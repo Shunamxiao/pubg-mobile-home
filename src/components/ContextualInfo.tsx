@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -26,7 +27,7 @@ export function ContextualInfo({ content }: ContextualInfoProps) {
     if (result.success && result.data?.suggestions) {
       setSuggestions(result.data.suggestions);
     } else {
-      setError(result.error || 'An unknown error occurred.');
+      setError(result.error || '发生未知错误。');
     }
     setIsLoading(false);
   };
@@ -36,26 +37,26 @@ export function ContextualInfo({ content }: ContextualInfoProps) {
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
         <CardTitle className="text-lg font-medium flex items-center">
           <Bot className="mr-2 h-5 w-5 text-accent" />
-          AI-Powered Insights
+          AI 智能提示
         </CardTitle>
         <Button onClick={handleGetInsights} disabled={isLoading} variant="secondary">
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Analyzing...
+              分析中...
             </>
           ) : (
-            'Get Tips'
+            '获取技巧'
           )}
         </Button>
       </CardHeader>
       <CardContent>
         {isLoading ? (
-            <p className="text-sm text-muted-foreground">The AI is analyzing the content for strategic tips...</p>
+            <p className="text-sm text-muted-foreground">AI 正在分析内容以提供战略技巧...</p>
         ) : error ? (
             <Alert variant="destructive">
                 <AlertCircle className="h-4 w-4" />
-                <AlertTitle>Error</AlertTitle>
+                <AlertTitle>错误</AlertTitle>
                 <AlertDescription>{error}</AlertDescription>
             </Alert>
         ) : suggestions.length > 0 ? (
@@ -68,9 +69,11 @@ export function ContextualInfo({ content }: ContextualInfoProps) {
             ))}
           </ul>
         ) : (
-          <p className="text-sm text-muted-foreground">Click "Get Tips" to receive AI-powered strategies and analysis based on this article.</p>
+          <p className="text-sm text-muted-foreground">点击“获取技巧”以接收基于本文的 AI 策略和分析。</p>
         )}
       </CardContent>
     </Card>
   );
 }
+
+    

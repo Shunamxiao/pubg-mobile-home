@@ -1,24 +1,25 @@
+
 'use server';
 /**
- * @fileOverview An AI agent that provides contextual information based on the content being viewed.
+ * @fileOverview 一个AI代理，根据正在查看的内容提供上下文信息。
  *
- * - getContextualInformation - A function that handles the process of providing contextual information.
- * - ContextualInformationInput - The input type for the getContextualInformation function.
- * - ContextualInformationOutput - The return type for the getContextualInformation function.
+ * - getContextualInformation - 处理提供上下文信息过程的函数。
+ * - ContextualInformationInput - getContextualInformation 函数的输入类型。
+ * - ContextualInformationOutput - getContextualInformation 函数的返回类型。
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const ContextualInformationInputSchema = z.object({
-  content: z.string().describe('The content of the article or forum post being viewed.'),
+  content: z.string().describe('正在查看的文章或论坛帖子的内容。'),
 });
 export type ContextualInformationInput = z.infer<typeof ContextualInformationInputSchema>;
 
 const ContextualInformationOutputSchema = z.object({
   suggestions: z.array(
-    z.string().describe('Relevant tips, strategies, or analysis based on the content.')
-  ).describe('A list of suggestions to improve gameplay and understanding of the game.'),
+    z.string().describe('基于内容提供相关的提示、策略或分析。')
+  ).describe('一个建议列表，旨在提高游戏玩法和对游戏的理解。'),
 });
 export type ContextualInformationOutput = z.infer<typeof ContextualInformationOutputSchema>;
 
@@ -30,15 +31,14 @@ const prompt = ai.definePrompt({
   name: 'contextualInformationPrompt',
   input: {schema: ContextualInformationInputSchema},
   output: {schema: ContextualInformationOutputSchema},
-  prompt: `You are an AI assistant designed to provide relevant tips, strategies, and analysis based on the content a user is viewing in a PUBG Mobile context.
+  prompt: `你是一名AI助手，旨在为《PUBG Mobile》玩家提供相关的游戏技巧、策略和分析。
 
-  Analyze the following content and provide a list of suggestions that would improve the user's gameplay and understanding of the game. Focus on actionable advice and insights.
+  请分析以下内容，并提供一个建议列表，以提高用户的游戏水平和对游戏的理解。建议应侧重于可操作的建议和见解。
 
-  Content: {{{content}}}
+  内容: {{{content}}}
 
-  Suggestions should be concise and directly related to the content provided. Limit the number of suggestions to 3.
-  All suggestions must be in Chinese.
-  Format the suggestions as a JSON array of strings.
+  建议应简洁，并与所提供的内容直接相关。将建议数量限制为3条。
+  所有建议都必须使用中文。
   `,
 });
 
@@ -53,3 +53,5 @@ const contextualInformationFlow = ai.defineFlow(
     return output!;
   }
 );
+
+    

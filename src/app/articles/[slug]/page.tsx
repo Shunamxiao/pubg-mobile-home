@@ -1,3 +1,4 @@
+
 import { getArticleBySlug, siteConfig } from '@/config/site';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!article) {
     return {
-      title: `Article not found - ${siteConfig.name}`,
+      title: `文章未找到 - ${siteConfig.name}`,
     };
   }
 
@@ -54,7 +55,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             {article.title}
           </h1>
           <p className="text-muted-foreground text-sm">
-            Posted on {article.date} {article.author && `by ${article.author}`}
+            发布于 {article.date} {article.author && ` by ${article.author}`}
           </p>
         </header>
 
@@ -67,3 +68,5 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     </article>
   );
 }
+
+    

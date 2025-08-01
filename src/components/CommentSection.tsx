@@ -1,3 +1,4 @@
+
 'use client';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -6,16 +7,16 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const mockComments = [
   {
-    user: 'ProGamer123',
+    user: '职业玩家123',
     avatar: 'https://placehold.co/40x40.png?text=P',
-    comment: 'Great guide! The tips on using the new ledge grab mechanic really helped my squad.',
-    date: '2 hours ago',
+    comment: '很棒的攻略！关于使用新抓爬机制的技巧真的帮到我的队伍了。',
+    date: '2小时前',
   },
   {
-    user: 'SniperQueen',
+    user: '狙神女王',
     avatar: 'https://placehold.co/40x40.png?text=S',
-    comment: 'Solid analysis on the M416 vs. Beryl. I\'m sticking with the Beryl for that extra punch.',
-    date: '5 hours ago',
+    comment: '对M416和Beryl的分析很到位。我还是坚持用Beryl，火力更猛。',
+    date: '5小时前',
   },
 ];
 
@@ -23,23 +24,23 @@ export function CommentSection() {
   return (
     <Card className="mt-12">
       <CardHeader>
-        <CardTitle>Community Discussion</CardTitle>
+        <CardTitle>社区讨论</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="mb-8">
           <div className="flex items-start space-x-4">
             <Avatar>
-              <AvatarImage src="https://placehold.co/40x40.png?text=U" alt="Your Avatar" />
-              <AvatarFallback>U</AvatarFallback>
+              <AvatarImage src="https://placehold.co/40x40.png?text=U" alt="你的头像" />
+              <AvatarFallback>你</AvatarFallback>
             </Avatar>
             <div className="flex-1">
               <form>
                 <Textarea
-                  placeholder="Join the discussion..."
+                  placeholder="加入讨论..."
                   className="mb-2"
                   rows={3}
                 />
-                <Button type="submit">Post Comment</Button>
+                <Button type="submit">发表评论</Button>
               </form>
             </div>
           </div>
@@ -66,3 +67,5 @@ export function CommentSection() {
     </Card>
   );
 }
+
+    
