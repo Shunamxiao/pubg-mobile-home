@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -62,47 +63,48 @@ export default function Home() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <div className="p-4 flex flex-col flex-grow">
+                    <CardContent className="p-4 flex flex-col flex-grow">
                       <CardTitle className="text-base md:text-lg font-bold line-clamp-2 group-hover:text-primary transition-colors">{article.title}</CardTitle>
-                      <CardDescription className="text-xs mt-1">{article.date}</CardDescription>
+                      <CardDescription className="text-xs mt-1">{article.date} {article.author && `by ${article.author}`}</CardDescription>
                       <p className="text-sm text-muted-foreground mt-2 line-clamp-2 flex-grow">{article.summary}</p>
                       <div className="mt-4 flex justify-end">
-                         <Button variant="outline" size="sm">
+                         <Button variant="link" size="sm" className="p-0 h-auto text-primary">
                             Read More <ArrowRight className="ml-1 h-3 w-3" />
                          </Button>
                       </div>
-                    </div>
+                    </CardContent>
                   </Link>
               </Card>
               ))}
             </div>
           ) : (
-            <Accordion type="single" collapsible className="w-full">
-              {(section.items as Article[]).map((item) => (
-                <AccordionItem value={item.slug} key={item.slug}>
-                  <AccordionTrigger className="text-left hover:no-underline">
-                    <div className="flex items-start md:items-center gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+              {(section.items as Article[]).slice(0, 4).map((item) => (
+                <Card key={item.slug} className="group overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                  <Link href={`/articles/${item.slug}`} className="flex flex-col h-full">
+                    <div className="relative w-full aspect-[1312/600] overflow-hidden">
                       <Image
                         src={item.imageUrl}
                         alt={item.title}
                         data-ai-hint={item.imageHint}
-                        width={100}
-                        height={100}
-                        className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md"
+                        fill
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="flex-1">
-                        <h3 className="font-bold text-base md:text-lg">{item.title} {item.version && `- v${item.version}`}</h3>
-                        <p className="text-sm text-muted-foreground mt-1 hidden md:block">{item.summary}</p>
-                         <p className="text-xs text-muted-foreground mt-2">{item.date}</p>
-                      </div>
                     </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="prose prose-invert max-w-none text-foreground/80 p-4 bg-card/20 rounded-b-lg">
-                    <MarkdownContent content={item.content} />
-                  </AccordionContent>
-                </AccordionItem>
+                    <CardContent className="p-4 flex flex-col flex-grow">
+                      <CardTitle className="text-base md:text-lg font-bold line-clamp-2 group-hover:text-primary transition-colors">{item.title} {item.version && `- v${item.version}`}</CardTitle>
+                       <CardDescription className="text-xs mt-1">{item.date}</CardDescription>
+                       <p className="text-sm text-muted-foreground mt-2 line-clamp-2 flex-grow">{item.summary}</p>
+                       <div className="mt-4 flex justify-end">
+                         <Button variant="link" size="sm" className="p-0 h-auto text-primary">
+                            Read More <ArrowRight className="ml-1 h-3 w-3" />
+                         </Button>
+                      </div>
+                    </CardContent>
+                  </Link>
+                </Card>
               ))}
-            </Accordion>
+            </div>
           )}
         </section>
       ))}
