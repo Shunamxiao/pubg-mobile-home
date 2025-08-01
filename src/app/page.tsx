@@ -99,7 +99,7 @@ export default function Home() {
                       <p className="text-muted-foreground">{update.summary}</p>
                         <Button asChild variant="link" className="p-0 h-auto mt-4">
                             <span className="flex items-center">
-                                View Patch Notes <ArrowRight className="ml-2 h-4 w-4" />
+                                立即查看 <ArrowRight className="ml-2 h-4 w-4" />
                             </span>
                         </Button>
                     </CardContent>

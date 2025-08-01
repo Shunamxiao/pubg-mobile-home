@@ -37,7 +37,7 @@ export default function UpdatesPage() {
                   <div className="pt-4">
                     <Button asChild variant="link" className="p-0 h-auto">
                       <span className="flex items-center">
-                          View Patch Notes <ArrowRight className="ml-2 h-4 w-4" />
+                      立即查看 <ArrowRight className="ml-2 h-4 w-4" />
                       </span>
                     </Button>
                   </div>
