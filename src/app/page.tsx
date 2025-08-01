@@ -78,11 +78,11 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="flex flex-col gap-8">
               {(section.items as Article[]).slice(0, 4).map((item) => (
-                <Card key={item.slug} className="group overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                  <Link href={`/articles/${item.slug}`} className="flex flex-col h-full">
-                    <div className="relative w-full aspect-[1312/600] overflow-hidden">
+                <Link key={item.slug} href={`/articles/${item.slug}`} className="group">
+                  <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                    <div className="relative w-full md:w-1/3 aspect-[1312/600] overflow-hidden shrink-0">
                       <Image
                         src={item.imageUrl}
                         alt={item.title}
@@ -91,18 +91,13 @@ export default function Home() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <CardContent className="p-4 flex flex-col flex-grow">
-                      <CardTitle className="text-base md:text-lg font-bold line-clamp-2 group-hover:text-primary transition-colors">{item.title} {item.version && `- v${item.version}`}</CardTitle>
-                       <CardDescription className="text-xs mt-1">{item.date}</CardDescription>
-                       <p className="text-sm text-muted-foreground mt-2 line-clamp-2 flex-grow">{item.summary}</p>
-                       <div className="mt-4 flex justify-end">
-                         <Button variant="link" size="sm" className="p-0 h-auto text-primary">
-                            Read More <ArrowRight className="ml-1 h-3 w-3" />
-                         </Button>
-                      </div>
+                    <CardContent className="p-6 flex flex-col justify-center">
+                      <CardTitle className="text-xl md:text-2xl font-bold group-hover:text-primary transition-colors">{item.title} {item.version && `- v${item.version}`}</CardTitle>
+                      <CardDescription className="text-sm mt-2">{item.date}</CardDescription>
+                      <p className="text-base text-muted-foreground mt-4 line-clamp-3">{item.summary}</p>
                     </CardContent>
-                  </Link>
-                </Card>
+                  </Card>
+                </Link>
               ))}
             </div>
           )}
