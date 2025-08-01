@@ -1,3 +1,4 @@
+
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
@@ -178,15 +179,15 @@ export const siteConfig = {
                     title: 'Version 3.2: Mecha Fusion',
                     summary: 'The Mecha Fusion update is here! Pilot giant mechs, explore the new Steel Ark, and master the new jetpack mechanics.',
                     content: `Version 3.2 introduces the thrilling Mecha Fusion mode. Players can now find and pilot powerful mechs, each with unique abilities. 
-        
-        - **The Strider:** An agile mech perfect for scouting.
-        - **The Leviathan:** A heavily armed beast capable of laying down devastating firepower.
-        
-        A new point of interest, the **Steel Ark**, has been added to Erangel. This massive flying fortress is a high-risk, high-reward drop location packed with top-tier loot.
-        
-        To help traverse the battlefield, all players are now equipped with a personal jetpack, allowing for short bursts of flight and incredible mobility.
-        
-        This update also includes various quality-of-life improvements, a new season pass, and a rebalancing of several assault rifles.`,
+
+- **The Strider:** An agile mech perfect for scouting.
+- **The Leviathan:** A heavily armed beast capable of laying down devastating firepower.
+
+A new point of interest, the **Steel Ark**, has been added to Erangel. This massive flying fortress is a high-risk, high-reward drop location packed with top-tier loot.
+
+To help traverse the battlefield, all players are now equipped with a personal jetpack, allowing for short bursts of flight and incredible mobility.
+
+This update also includes various quality-of-life improvements, a new season pass, and a rebalancing of several assault rifles.`,
                     date: 'July 28, 2024',
                     imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(5).webp',
                     imageHint: 'giant robot',
@@ -198,9 +199,9 @@ export const siteConfig = {
                     summary: 'Step into a world of magic and mystery with the Arabian Nights update. Discover the new Nimbus Island and ride the flying carpet.',
                     content: `The Arabian Nights update brings a touch of magic to the battlegrounds. The new Nimbus Island is a vibrant, treasure-filled location with interactive elements. Ring gongs to summon supplies or search for the magical genie who can grant you a wish for powerful loot.
         
-        The **flying carpet** is a new two-person vehicle that allows for silent and swift transportation across the map. It's perfect for stealthy rotations.
+The **flying carpet** is a new two-person vehicle that allows for silent and swift transportation across the map. It's perfect for stealthy rotations.
         
-        This patch also introduced the new **AMR sniper rifle**, capable of one-shotting even a Level 3 helmet, and a host of bug fixes and performance optimizations.`,
+This patch also introduced the new **AMR sniper rifle**, capable of one-shotting even a Level 3 helmet, and a host of bug fixes and performance optimizations.`,
                     date: 'June 15, 2024',
                     imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(6).webp',
                     imageHint: 'desert city',
@@ -234,3 +235,5 @@ export interface Article {
   
 export interface Update extends Article {}
   
+
+    
