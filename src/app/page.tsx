@@ -5,13 +5,21 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { GameDownloadButtons } from '@/components/GameDownloadButtons';
 import { ArrowRight } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { MarkdownContent } from '@/components/MarkdownContent';
+
 
 export default function Home() {
   const keywords = ['pubg mobile', 'pubg mobile 官网', 'pubg mobile 下载', 'pubg mobile 官方网站', 'pubg mobile 国际服', 'pubg mobile 国服', 'pubg mobile 更新', 'pubg mobile 最新版本', 'pubg mobile 安卓下载', 'pubg mobile iOS 下载', '地铁逃生', 'pbg大逃杀'];
   return (
     <div className="flex flex-col gap-12 md:gap-16 pb-16">
       {/* Hero Section */}
-      <section className="relative w-full aspect-video flex items-center justify-center text-center text-white">
+      <section id="home" className="relative w-full aspect-video flex items-center justify-center text-center text-white">
         <Image
           src="https://cdn.apks.cc/blinko/1753975129551-1753975127906-downloadbj.png"
           alt="PUBG Mobile下载,地铁逃生下载"
@@ -38,47 +46,42 @@ export default function Home() {
       </section>
 
       {/* Latest Articles Section */}
-      <section className="container mx-auto px-4 md:px-6 mt-[-4rem] relative z-20">
+      <section id="articles" className="container mx-auto px-4 md:px-6 scroll-mt-20">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">最新文章</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.slice(0, 3).map((article) => (
-            <Card key={article.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <Link href={`/articles/${article.slug}`} className="block">
-                <Image
-                src={article.imageUrl}
-                alt={article.title}
-                data-ai-hint={article.imageHint}
-                width={800}
-                height={400}
-                className="w-full object-cover aspect-video"
-                />
-            </Link>
-            <CardHeader className="p-4">
-                <CardTitle className="text-lg leading-tight line-clamp-2 min-h-[2.5rem]">{article.title}</CardTitle>
-                <CardDescription className="text-xs pt-1">{article.date} by {article.author}</CardDescription>
-            </CardHeader>
-            <CardContent className="p-4 pt-0 flex-grow">
-                <p className="text-muted-foreground text-sm line-clamp-2">{article.summary}</p>
-            </CardContent>
-            <div className="p-4 pt-0">
-                <Button asChild variant="link" className="p-0 h-auto text-sm">
-                <Link href={`/articles/${article.slug}`}>
-                    阅读全文 <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-                </Button>
-            </div>
-            </Card>
-        ))}
-        </div>
+        <Accordion type="single" collapsible className="w-full">
+          {articles.map((article) => (
+            <AccordionItem value={article.slug} key={article.slug}>
+              <AccordionTrigger className="text-left hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={article.imageUrl}
+                    alt={article.title}
+                    data-ai-hint={article.imageHint}
+                    width={100}
+                    height={100}
+                    className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md"
+                  />
+                  <div className="flex-1">
+                    <h3 className="font-bold text-base md:text-lg">{article.title}</h3>
+                    <p className="text-sm text-muted-foreground mt-1 hidden md:block">{article.summary}</p>
+                     <p className="text-xs text-muted-foreground mt-2">{article.date} by {article.author}</p>
+                  </div>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="prose prose-invert prose-lg max-w-none text-foreground/80 p-4 bg-card/20 rounded-b-lg">
+                <MarkdownContent content={article.content} />
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </section>
 
       {/* Version Updates Section */}
-      <section className="container mx-auto px-4 md:px-6">
+      <section id="updates" className="container mx-auto px-4 md:px-6 scroll-mt-20">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">版本更新日志</h2>
         <div className="space-y-6">
-          {updates.slice(0, 2).map((update) => (
+          {updates.map((update) => (
             <Card key={update.slug} className="hover:shadow-lg transition-shadow duration-300">
-              <Link href={`/updates/${update.slug}`}>
                 <div className="grid md:grid-cols-3 gap-0">
                   <div className="md:col-span-1 relative rounded-t-lg md:rounded-l-lg md:rounded-t-none overflow-hidden">
                     <Image
@@ -97,22 +100,16 @@ export default function Home() {
                     </CardHeader>
                     <CardContent className="p-0">
                       <p className="text-muted-foreground">{update.summary}</p>
-                        <Button asChild variant="link" className="p-0 h-auto mt-4">
-                            <span className="flex items-center">
-                                立即查看 <ArrowRight className="ml-2 h-4 w-4" />
-                            </span>
-                        </Button>
                     </CardContent>
                   </div>
                 </div>
-              </Link>
             </Card>
           ))}
         </div>
       </section>
       
       {/* Social Media Feed */}
-      <section className="container mx-auto px-4 md:px-6">
+      <section id="video" className="container mx-auto px-4 md:px-6 scroll-mt-20">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">官方介绍视频</h2>
         <div className="aspect-video">
           <iframe
@@ -133,3 +130,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
