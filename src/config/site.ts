@@ -1,6 +1,7 @@
 export const siteConfig = {
+    name: 'PUBG Mobile',
     seo: {
-        title: 'PUBG Mobile官网 | 下载、更新、攻略 - 官方正版入口',
+        title: '官网 | 下载、更新、攻略 - 官方正版入口',
         description: '欢迎访问PUBG Mobile官网，提供最新游戏下载、更新日志、游戏攻略和玩家社区，支持安卓与iOS系统，一站式掌握刺激战场动态。',
         keywords: ['PUBG Mobile', 'PUBG Mobile 官网', 'PUBG Mobile 下载', '吃鸡手游', '刺激战场', '地铁逃生', '和平精英国际服', 'PUBG Mobile 更新', 'PUBG Mobile 攻略', 'PUBG Mobile 新手教程', 'PUBG Mobile 安卓下载', 'PUBG Mobile iOS下载'],
         ogImage: 'https://cdn.apks.cc/blinko/1753974441995-1753974441505-share.jpg',

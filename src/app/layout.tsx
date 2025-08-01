@@ -5,15 +5,17 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from '@/config/site';
 
+const fullTitle = `${siteConfig.name} - ${siteConfig.seo.title}`;
+
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.seo.title,
-    template: `%s - ${siteConfig.seo.title}`,
+    default: fullTitle,
+    template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.seo.description,
   keywords: siteConfig.seo.keywords,
   openGraph: {
-    title: siteConfig.seo.title,
+    title: fullTitle,
     description: siteConfig.seo.description,
     images: [siteConfig.seo.ogImage],
   },
