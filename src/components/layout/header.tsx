@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { PubgLogo } from '@/components/icons/PubgLogo';
 import { Button } from '@/components/ui/button';
 import { Gamepad2, Menu, Newspaper, Rss, Video } from 'lucide-react';
