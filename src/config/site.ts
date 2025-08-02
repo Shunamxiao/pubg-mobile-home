@@ -2,7 +2,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-    name: 'PUBG Mobile 中心',
+    name: 'PUBG Mobile',
     seo: {
         title: '官网 | 下载、更新、攻略 - 官方正版入口',
         description: '欢迎访问PUBG Mobile中心，提供最新游戏下载、更新日志、游戏攻略和玩家社区，支持安卓与iOS系统，一站式掌握刺激战场动态。',
