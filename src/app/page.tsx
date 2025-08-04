@@ -5,26 +5,19 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { GameDownloadButtons } from '@/components/GameDownloadButtons';
 import { ArrowRight } from 'lucide-react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-import { MarkdownContent } from '@/components/MarkdownContent';
 import { siteConfig } from '@/config/site';
 import type { Article } from '@/config/site';
 
 
 export default function Home() {
-  const keywords = ['pubg mobile', 'pubg mobile 官网', 'pubg mobile 下载', 'pubg mobile 官方网站', 'pubg mobile 国际服', 'pubg mobile 国服', 'pubg mobile 更新', 'pubg mobile 最新版本', 'pubg mobile 安卓下载', 'pubg mobile iOS 下载', '地铁逃生', 'pbg大逃杀'];
+  const keywords = siteConfig.seo.keywords;
   return (
     <div className="flex flex-col gap-12 md:gap-16 pb-16">
       {/* Hero Section */}
       <section id="home" className="relative w-full aspect-video flex items-center justify-center text-center text-white">
         <Image
           src={siteConfig.hero.backgroundImage}
-          alt="PUBG Mobile下载,地铁逃生下载"
+          alt={siteConfig.name+"下载"}
           data-ai-hint="battle royale action"
           fill
           className="object-cover object-center -z-10"
