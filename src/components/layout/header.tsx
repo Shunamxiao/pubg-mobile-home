@@ -137,7 +137,7 @@ export function Header() {
           </div>
 
           <div className="hidden md:flex items-center">
-            <Button onClick={() => setIsApkDialogOpen(true)}>
+            <Button onClick={() => setIsApkDialogOpen(true)} className="animated-border-btn">
               游戏下载
             </Button>
           </div>
