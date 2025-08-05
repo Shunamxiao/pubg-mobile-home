@@ -38,7 +38,7 @@ export const siteConfig = {
             dialog: {
                 title: '选择下载渠道',
                 description: '请选择您偏好的下载方式。',
-                panUrl: 'https://www.123pan.com/s/4H3LVv-DykI',
+                panUrl: 'https://www.123pan.com/s/4H3LVv-gUpI',
                 officialUrl: 'https://f.gbcass.com/PUBGMOBILE_Global_3.9.0_uawebsite_livik01_9275A2699.apk',
             }
         },
