@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PubgLogo } from '@/components/icons/PubgLogo';
 import { siteConfig } from '@/config/site';
+import { FeedbackDialog } from '@/components/FeedbackDialog';
 
 export function Footer() {
   return (
@@ -16,8 +17,16 @@ export function Footer() {
             </p>
             </div>
         </div>
-        <div className="mt-6 text-center text-xs text-muted-foreground">
-            {siteConfig.footer.copyright.replace('{year}', new Date().getFullYear().toString())}
+        <div className="mt-6 text-center text-xs text-muted-foreground space-y-2">
+            <div>
+                {siteConfig.footer.copyright.replace('{year}', new Date().getFullYear().toString())}
+            </div>
+            <div className="flex justify-center items-center gap-4">
+                <a href={`mailto:${siteConfig.footer.feedback.email}`} className="hover:text-primary transition-colors">
+                    {siteConfig.footer.feedback.email}
+                </a>
+                <FeedbackDialog />
+            </div>
         </div>
       </div>
     </footer>
