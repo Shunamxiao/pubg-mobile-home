@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from '@/config/site';
-import Script from 'next/script';
 
 const fullTitle = `${siteConfig.name} - ${siteConfig.seo.title}`;
 
@@ -37,20 +36,12 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
-        {siteConfig.analytics.baidu && (
-            <Script id="baidu-analytics" strategy="afterInteractive">
-              {`
-                var _hmt = _hmt || [];
-                (function() {
-                  var hm = document.createElement("script");
-                  hm.src = "https://hm.baidu.com/hm.js?${siteConfig.analytics.baidu}";
-                  var s = document.getElementsByTagName("script")[0]; 
-                  s.parentNode.insertBefore(hm, s);
-                })();
-              `}
-            </Script>
+        {siteConfig.analytics.customBodyScript && (
+          <div dangerouslySetInnerHTML={{ __html: siteConfig.analytics.customBodyScript }} />
         )}
       </body>
     </html>
   );
 }
+
+    

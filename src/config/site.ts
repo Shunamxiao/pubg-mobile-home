@@ -10,7 +10,17 @@ export const siteConfig = {
         ogImage: 'https://cdn.apks.cc/blinko/1753974441995-1753974441505-share.jpg',
     },
     analytics: {
-        baidu: 'b2e255a5512aa46a4f692adf9c8bfe00',
+        customBodyScript: `
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?b2e255a5512aa46a4f692adf9c8bfe00";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+        `,
     },
     header: {
         logo: {
@@ -160,3 +170,6 @@ export interface Update extends Article {}
 
     
 
+
+
+    
