@@ -40,8 +40,7 @@ export const siteConfig = {
             srText: '在 Google Play 下载',
         },
         appStore: {
-            url: 'https://apps.apple.com/hk/app/pubg-mobile/id1330123889',
-            backgroundImage: 'https://cdn.apks.cc/blinko/1753972022261-1753972021905-app_store.png',
+            url: 'https://apps.apple.com/hk/app/pubg-mobile/id1330123889',  backgroundImage: 'https://cdn.apks.cc/blinko/1753972022261-1753972021905-app_store.png',
             srText: '在 App Store 下载',
         },
         apk: {
