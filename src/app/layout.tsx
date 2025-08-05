@@ -37,17 +37,19 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
-        <Script id="baidu-analytics">
-          {`
-            var _hmt = _hmt || [];
-            (function() {
-              var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?b2e255a5512aa46a4f692adf9c8bfe00";
-              var s = document.getElementsByTagName("script")[0]; 
-              s.parentNode.insertBefore(hm, s);
-            })();
-          `}
-        </Script>
+        {siteConfig.analytics.baidu && (
+            <Script id="baidu-analytics" strategy="afterInteractive">
+              {`
+                var _hmt = _hmt || [];
+                (function() {
+                  var hm = document.createElement("script");
+                  hm.src = "https://hm.baidu.com/hm.js?${siteConfig.analytics.baidu}";
+                  var s = document.getElementsByTagName("script")[0]; 
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              `}
+            </Script>
+        )}
       </body>
     </html>
   );

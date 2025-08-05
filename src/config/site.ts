@@ -9,6 +9,9 @@ export const siteConfig = {
         keywords: ['PUBG Mobile', 'PUBG Mobile 官网', 'PUBG Mobile 下载', '吃鸡手游', '刺激战场', '地铁逃生', '和平精英国际服', 'PUBG Mobile 更新', 'PUBG Mobile 攻略', 'PUBG Mobile 新手教程', 'PUBG Mobile 安卓下载', 'PUBG Mobile iOS下载'],
         ogImage: 'https://cdn.apks.cc/blinko/1753974441995-1753974441505-share.jpg',
     },
+    analytics: {
+        baidu: 'b2e255a5512aa46a4f692adf9c8bfe00',
+    },
     header: {
         logo: {
             url: 'https://cdn.apks.cc/blinko/1753973194134-1753973193794-nav_logo.png',
@@ -108,7 +111,7 @@ export const siteConfig = {
                     version: '3.2.0',
                     title: '3.2版本：机甲聚变',
                     summary: '机甲聚变更新现已上线！驾驶巨型机甲，探索全新的钢铁方舟，并掌握全新的喷气背包机制。',
-                    content: `## 3.2版本：机甲聚变更新\n\n3.2版本引入了激动人心的机甲聚变模式。玩家现在可以找到并驾驶强大的机甲，每种机甲都有独特的能力。\n\n- **行者号**：一种适合侦察的敏捷机甲。\n- **利维坦号**：一种重武装野兽，能够施展毁灭性的火力。\n\nA new point of interest, the **Steel Ark**, has been added to Erangel. This massive flying fortress is a high-risk, high-reward drop location packed with top-tier loot.\n\nTo help traverse the battlefield, all players are now equipped with a personal jetpack, allowing for short bursts of flight and incredible mobility.\n\nThis update also includes various quality-of-life improvements, a new season pass, and a rebalancing of several assault rifles.`,
+                    content: `## 3.2版本：机甲聚变更新\n\n3.2版本引入了激动人心的机甲聚变模式。玩家现在可以找到并驾驶强大的机甲，每种机甲都有独特的能力。\n\n- **行者号**：一种适合侦察的敏捷机甲。\n- **利维坦号**：一种重武装野兽，能够施展毁灭性的火力。\n\n全新的“钢铁方舟”据点已加入艾伦格。这座巨大的飞行堡垒是一个高风险、高回报的降落点，充满了顶级战利品。\n\n为了帮助穿越战场，所有玩家现在都配备了个人喷气背包，可以进行短暂的飞行，实现惊人的机动性。\n\n本次更新还包括各种生活质量改进、新的赛季通行证以及对几种突击步枪的重新平衡。`,
                     date: '2024年7月28日',
                     imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(5).webp',
                     imageHint: 'giant robot',
@@ -156,3 +159,4 @@ export interface Update extends Article {}
     
 
     
+
