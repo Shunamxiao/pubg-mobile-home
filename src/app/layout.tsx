@@ -5,18 +5,18 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from '@/config/site';
+import { AnalyticsScript } from '@/components/AnalyticsScript';
 
-const fullTitle = `${siteConfig.name} - ${siteConfig.seo.title}`;
-
+// Metadata is still useful for static tags
 export const metadata: Metadata = {
   title: {
-    default: fullTitle,
+    default: `${siteConfig.name} - ${siteConfig.seo.title}`,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.seo.description,
   keywords: siteConfig.seo.keywords,
   openGraph: {
-    title: fullTitle,
+    title: `${siteConfig.name} - ${siteConfig.seo.title}`,
     description: siteConfig.seo.description,
     images: [siteConfig.seo.ogImage],
   },
@@ -36,12 +36,8 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
-        {siteConfig.analytics.customBodyScript && (
-           <div dangerouslySetInnerHTML={{ __html: siteConfig.analytics.customBodyScript }} />
-        )}
+        <AnalyticsScript />
       </body>
     </html>
   );
 }
-
-    
