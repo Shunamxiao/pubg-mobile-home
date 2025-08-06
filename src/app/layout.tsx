@@ -37,7 +37,7 @@ export default function RootLayout({
         </div>
         <Toaster />
         {siteConfig.analytics.customBodyScript && (
-          <div dangerouslySetInnerHTML={{ __html: siteConfig.analytics.customBodyScript }} />
+           <div dangerouslySetInnerHTML={{ __html: siteConfig.analytics.customBodyScript }} />
         )}
       </body>
     </html>
