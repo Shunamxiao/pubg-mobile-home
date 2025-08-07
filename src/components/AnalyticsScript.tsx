@@ -16,6 +16,7 @@ export function AnalyticsScript() {
       
       const script = document.createElement('script');
       script.id = scriptId;
+      script.async = true; // Ensure asynchronous execution
       // It's safer to set the content this way for scripts
       script.innerHTML = siteConfig.analytics.customBodyScript;
       document.head.appendChild(script);
