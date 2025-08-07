@@ -14,12 +14,30 @@ export function AnalyticsScript() {
         return;
       }
       
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.async = true; // Ensure asynchronous execution
-      // It's safer to set the content this way for scripts
-      script.innerHTML = siteConfig.analytics.customBodyScript;
-      document.head.appendChild(script);
+      try {
+        const scriptContent = siteConfig.analytics.customBodyScript;
+        const blob = new Blob([scriptContent], { type: 'application/javascript' });
+        const url = URL.createObjectURL(blob);
+
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = url;
+        script.async = true;
+
+        document.head.appendChild(script);
+
+        // Clean up the object URL after the script has loaded to free up memory
+        script.onload = () => {
+          URL.revokeObjectURL(url);
+        };
+        script.onerror = () => {
+          console.error('Custom analytics script failed to load.');
+          URL.revokeObjectURL(url);
+        }
+
+      } catch (error) {
+        console.error('Failed to create or inject custom script:', error);
+      }
     }
   }, []);
 
