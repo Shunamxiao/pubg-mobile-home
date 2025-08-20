@@ -44,7 +44,25 @@ export function CommunitySquare() {
         </Button>
       </CardHeader>
       <CardContent>
-        <div className="mb-6">
+      <div className="space-y-4">
+          {mockComments.map((comment, index) => (
+            <div key={index} className="flex items-start space-x-4 text-sm">
+              <Avatar className="h-8 w-8">
+                <AvatarImage src={comment.avatar} alt={comment.user} />
+                <AvatarFallback>{comment.user.charAt(0)}</AvatarFallback>
+              </Avatar>
+              <div className="flex-1">
+                <div className="flex items-baseline space-x-2">
+                  <p className="font-semibold text-foreground">{comment.user}</p>
+                  <p className="text-xs text-muted-foreground">{comment.date}</p>
+                </div>
+                <p className="text-muted-foreground">{comment.comment}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8">
             <form className="flex items-start space-x-4">
                 <Avatar>
                     <AvatarImage src="https://placehold.co/40x40.png?text=U" alt="你的头像" />
@@ -67,23 +85,7 @@ export function CommunitySquare() {
             </form>
         </div>
 
-        <div className="space-y-4">
-          {mockComments.map((comment, index) => (
-            <div key={index} className="flex items-start space-x-4 text-sm">
-              <Avatar className="h-8 w-8">
-                <AvatarImage src={comment.avatar} alt={comment.user} />
-                <AvatarFallback>{comment.user.charAt(0)}</AvatarFallback>
-              </Avatar>
-              <div className="flex-1">
-                <div className="flex items-baseline space-x-2">
-                  <p className="font-semibold text-foreground">{comment.user}</p>
-                  <p className="text-xs text-muted-foreground">{comment.date}</p>
-                </div>
-                <p className="text-muted-foreground">{comment.comment}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        
       </CardContent>
     </Card>
   );
