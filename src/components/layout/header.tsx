@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { PubgLogo } from '@/components/icons/PubgLogo';
 import { Button } from '@/components/ui/button';
-import { Gamepad2, Menu, Newspaper, Rss, Video } from 'lucide-react';
+import { Gamepad2, Menu, MessageSquare, Newspaper, Rss, Video } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
@@ -12,6 +12,7 @@ import { ApkDownloadDialog } from '../ApkDownloadDialog';
 
 const navIcons: { [key: string]: React.ElementType } = {
   home: Gamepad2,
+  community: MessageSquare,
   articles: Newspaper,
   updates: Rss,
   video: Video,
@@ -33,7 +34,7 @@ export function Header() {
   ];
 
   useEffect(() => {
-    const sections = navLinks.map(link => document.getElementById(link.sectionId));
+    const sections = navLinks.map(link => document.getElementById(link.sectionId)).filter(Boolean);
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

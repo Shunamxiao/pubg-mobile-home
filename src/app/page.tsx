@@ -7,6 +7,7 @@ import { GameDownloadButtons } from '@/components/GameDownloadButtons';
 import { ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import type { Article } from '@/config/site';
+import { CommunitySquare } from '@/components/CommunitySquare';
 
 
 export default function Home() {
@@ -41,6 +42,11 @@ export default function Home() {
 
       {siteConfig.sections.map((section) => (
         <section key={section.id} id={section.id} className="container mx-auto px-4 md:px-6 scroll-mt-20">
+          {section.id === 'community' && (
+             <div className="mb-8">
+              <CommunitySquare />
+            </div>
+          )}
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{section.title}</h2>
           {section.id === 'articles' ? (
              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
@@ -70,7 +76,7 @@ export default function Home() {
               </Card>
               ))}
             </div>
-          ) : (
+          ) : section.id === 'updates' ? (
             <div className="flex flex-col gap-8">
               {(section.items as Article[]).slice(0, 4).map((item) => (
                 <Link key={item.slug} href={`/articles/${item.slug}`} className="group">
@@ -93,7 +99,7 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-          )}
+          ) : null}
         </section>
       ))}
 
