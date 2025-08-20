@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { Input } from "./ui/input";
 
 const mockComments = [
     {
@@ -49,14 +50,18 @@ export function CommunitySquare() {
                     <AvatarImage src="https://placehold.co/40x40.png?text=U" alt="你的头像" />
                     <AvatarFallback>你</AvatarFallback>
                 </Avatar>
-                <div className="flex-1">
+                <div className="flex-1 space-y-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <Input placeholder="你的昵称 *" type="text" required />
+                        <Input placeholder="你的邮箱 *" type="email" required />
+                    </div>
                     <Textarea
-                    placeholder="有什么新鲜事想分享给大家？"
-                    className="mb-2"
-                    rows={2}
+                        placeholder="有什么新鲜事想分享给大家？ *"
+                        rows={2}
+                        required
                     />
                     <div className="flex justify-end">
-                        <Button type="submit" size="sm">快速发表</Button>
+                        <Button type="submit" size="sm">发送</Button>
                     </div>
                 </div>
             </form>
