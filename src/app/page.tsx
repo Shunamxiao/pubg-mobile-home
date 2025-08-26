@@ -46,6 +46,11 @@ export default function Home() {
           return null;
         }
 
+        // For sections other than community, also check if items exist and are not empty
+        if (section.id !== 'community' && (!section.items || section.items.length === 0)) {
+            return null;
+        }
+
         return (
           <section key={section.id} id={section.id} className="container mx-auto px-4 md:px-6 scroll-mt-20">
             {section.id === 'community' ? (
