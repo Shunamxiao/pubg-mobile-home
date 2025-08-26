@@ -21,7 +21,7 @@ export async function submitFeedbackFlow(input: FeedbackInput) {
   
   const { output } = await ai.generate({
     prompt: `一名用户提交了以下网站反馈。\n标题: ${input.title}\n内容: ${input.content}\n联系方式: ${input.contact || '未提供'}\n\n请生成一条简短的中文确认消息，感谢他们的提交。`,
-    model: 'googleai/gemini-2.0-flash',
+    model: 'googleai/gemini-pro',
   });
 
 
