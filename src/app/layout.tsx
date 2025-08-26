@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from '@/config/site';
 import { AnalyticsScript } from '@/components/AnalyticsScript';
+import { CustomHead } from '@/components/CustomHead';
 
 // Metadata is still useful for static tags
 export const metadata: Metadata = {
@@ -37,7 +38,10 @@ export default function RootLayout({
         </div>
         <Toaster />
         <AnalyticsScript />
+        <CustomHead />
       </body>
     </html>
   );
 }
+
+    

@@ -19,6 +19,10 @@ export const siteConfig = {
               s.parentNode.insertBefore(hm, s);
             })();
         `,
+        customHeadHtml: `
+            <meta name="custom-meta" content="hello-world">
+            <link rel="stylesheet" href="https://example.com/custom.css">
+        `,
     },
     header: {
         logo: {
@@ -65,7 +69,7 @@ export const siteConfig = {
         description: '推荐收藏，分享给您的好友吧！这里是您获取《PUBG Mobile》新闻、更新和社区信息的最终目的地。这是一个非官方的粉丝自制网站。',
         copyright: '© {year} PUBG Mobile. 保留所有权利. 游戏内容和材料均为其各自发行商及其许可人的商标和版权。',
         feedback: {
-            email: 'feedback@example.com',
+            email: 'apkscc-feedback@foxmail.com',
             buttonText: '反馈建议',
             dialogTitle: '提交您的反馈',
             dialogDescription: '我们非常重视您的意见，请填写以下信息。您的建议将帮助我们改进网站。',
@@ -202,5 +206,7 @@ export interface Update extends Article {}
 
 
 
+
+    
 
     
