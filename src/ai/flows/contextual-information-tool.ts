@@ -27,11 +27,13 @@ export async function getContextualInformation(input: ContextualInformationInput
   return contextualInformationFlow(input);
 }
 
+const modelName = process.env.GENERATIVE_AI_MODEL || 'googleai/gemini-pro';
+
 const prompt = ai.definePrompt({
   name: 'contextualInformationPrompt',
   input: {schema: ContextualInformationInputSchema},
   output: {schema: ContextualInformationOutputSchema},
-  model: 'googleai/gemini-pro',
+  model: modelName,
   prompt: `你是一名AI助手，旨在为《PUBG Mobile》玩家提供相关的游戏技巧、策略和分析。
 
   请分析以下内容，并提供一个建议列表，以提高用户的游戏水平和对游戏的理解。建议应侧重于可操作的建议和见解。
@@ -54,5 +56,3 @@ const contextualInformationFlow = ai.defineFlow(
     return output!;
   }
 );
-
-    

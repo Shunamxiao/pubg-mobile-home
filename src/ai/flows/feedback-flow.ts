@@ -9,6 +9,7 @@
 import { ai } from '@/ai/genkit';
 import { FeedbackInputSchema, type FeedbackInput } from '@/lib/types';
 
+const modelName = process.env.GENERATIVE_AI_MODEL || 'googleai/gemini-pro';
 
 export async function submitFeedbackFlow(input: FeedbackInput) {
   // 在真实的应用程序中，您可能会将此反馈保存到数据库，
@@ -21,7 +22,7 @@ export async function submitFeedbackFlow(input: FeedbackInput) {
   
   const { output } = await ai.generate({
     prompt: `一名用户提交了以下网站反馈。\n标题: ${input.title}\n内容: ${input.content}\n联系方式: ${input.contact || '未提供'}\n\n请生成一条简短的中文确认消息，感谢他们的提交。`,
-    model: 'googleai/gemini-pro',
+    model: modelName,
   });
 
 
