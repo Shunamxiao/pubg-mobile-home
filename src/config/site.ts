@@ -75,7 +75,7 @@ export const siteConfig = {
             id: 'community',
             title: '交流广场',
             navLabel: '社区',
-            enabled: true,
+            enabled: false,
             items: [],
         },
         {
@@ -83,6 +83,16 @@ export const siteConfig = {
             title: '最新文章',
             navLabel: '资讯',
             items: [
+                {
+                    slug: 'pubgm-4.0-news-0826',
+                    title: '《PUBG Mobile》4.0版本即将来袭！',
+                    summary: '他是否很友善，還是只是有點淘氣？',
+                    content: `## PUBG MOBILE 4.0 版本即將發布，您很快就能知道 Ghostie 是否是您的盟友。敬請期待更多詳情！`,
+                    author: '猫咪蒲公英',
+                    date: '2025年8月26日',
+                    imageUrl: 'https://cdn.apks.cc/blinko/GzHoaW7XkAARM8F.jpg',
+                    imageHint: 'phone sim card',
+                  },
                 {
                     slug: 'pubgm-login-solution-sim-card',
                     title: '《PUBG Mobile》登录失败/卡加载？新用户必读的“拔卡”终极解决方案',
