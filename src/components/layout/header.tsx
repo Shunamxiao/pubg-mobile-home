@@ -25,10 +25,12 @@ export function Header() {
   
   const navLinks = [
     { href: '#home', label: '首页', sectionId: 'home' },
-    ...siteConfig.sections.map(section => ({
-      href: `#${section.id}`,
-      label: section.navLabel,
-      sectionId: section.id,
+    ...siteConfig.sections
+      .filter(section => section.enabled !== false)
+      .map(section => ({
+        href: `#${section.id}`,
+        label: section.navLabel,
+        sectionId: section.id,
     })),
     { href: `#${siteConfig.video.id}`, label: siteConfig.video.navLabel, sectionId: siteConfig.video.id },
   ];
