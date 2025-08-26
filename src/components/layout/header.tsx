@@ -19,7 +19,7 @@ const navIcons: { [key: string]: React.ElementType } = {
 };
 
 export function Header() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('home');
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [isApkDialogOpen, setIsApkDialogOpen] = useState(false);
   
@@ -36,51 +36,35 @@ export function Header() {
   ];
 
   useEffect(() => {
-    // We observe all sections except 'home'
     const sectionsToObserve = navLinks.slice(1).map(link => document.getElementById(link.sectionId)).filter(Boolean);
     
     if (sectionsToObserve.length === 0) return;
 
     const observer = new IntersectionObserver((entries) => {
-      let isIntersecting = false;
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
-          isIntersecting = true;
         }
       });
-      // If nothing is intersecting, it means we are at the top (hero section)
-      if (!isIntersecting) {
-         // Check if we are scrolled at the very top
-         if (window.scrollY < 100) {
-            setActiveSection('');
-         }
+
+      // Check if any section is intersecting. If not, we are at the top.
+      const isAnySectionIntersecting = entries.some(entry => entry.isIntersecting);
+      if (!isAnySectionIntersecting && window.scrollY < sectionsToObserve[0]?.offsetTop) {
+        setActiveSection('home');
       }
+
     }, { rootMargin: "-50% 0px -50% 0px" });
 
     sectionsToObserve.forEach(section => {
       if (section) observer.observe(section);
     });
 
-    const handleScroll = () => {
-        if (window.scrollY < 100 && activeSection !== '') {
-            const firstSection = sectionsToObserve[0];
-            const firstSectionTop = firstSection?.getBoundingClientRect().top;
-            if(firstSectionTop && firstSectionTop > window.innerHeight / 2) {
-                setActiveSection('');
-            }
-        }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
     return () => {
       sectionsToObserve.forEach(section => {
         if (section) observer.unobserve(section);
       });
-      window.removeEventListener('scroll', handleScroll);
     };
-  }, [navLinks, activeSection]);
+  }, [navLinks]);
   
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -97,11 +81,7 @@ export function Header() {
     if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
         // Manually set active section for instant feedback on click
-        if(targetId !== 'home') {
-            setActiveSection(targetId);
-        } else {
-            setActiveSection('');
-        }
+        setActiveSection(targetId);
     }
     setIsSheetOpen(false); // Close sheet on link click
   };
