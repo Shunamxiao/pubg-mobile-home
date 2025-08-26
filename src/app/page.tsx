@@ -54,9 +54,7 @@ export default function Home() {
         return (
           <section key={section.id} id={section.id} className="container mx-auto px-4 md:px-6 scroll-mt-20">
             {section.id === 'community' ? (
-              <div className="mb-8">
-                <CommunitySquare />
-              </div>
+              <CommunitySquare />
             ) : (
               <>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{section.title}</h2>
@@ -119,18 +117,20 @@ export default function Home() {
       })}
 
       {/* Social Media Feed */}
-      <section id={siteConfig.video.id} className="container mx-auto px-4 md:px-6 scroll-mt-20">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{siteConfig.video.title}</h2>
-        <div className="aspect-video">
-          <iframe
-            className="w-full h-full rounded-lg shadow-lg"
-            src={`${siteConfig.video.url}?muted=1`}
-            title={siteConfig.video.playerTitle}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </section>
+      {siteConfig.video.enabled && (
+        <section id={siteConfig.video.id} className="container mx-auto px-4 md:px-6 scroll-mt-20">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">{siteConfig.video.title}</h2>
+          <div className="aspect-video">
+            <iframe
+              className="w-full h-full rounded-lg shadow-lg"
+              src={`${siteConfig.video.url}?muted=1`}
+              title={siteConfig.video.playerTitle}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </section>
+      )}
 
       {/* SEO Keywords Section */}
       <div className="sr-only">
@@ -139,3 +139,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

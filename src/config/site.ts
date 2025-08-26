@@ -59,6 +59,7 @@ export const siteConfig = {
         url: 'https://cdn.apks.cc/blinko/%5Btwi%5D%40PUBG%20_twi.mp4',
         playerTitle: 'pubgm4.0版本',
         navLabel: '官方频道',
+        enabled: true,
     },
     footer: {
         description: '推荐收藏，分享给您的好友吧！这里是您获取《PUBG Mobile》新闻、更新和社区信息的最终目的地。这是一个非官方的粉丝自制网站。',
@@ -200,3 +201,6 @@ export interface Update extends Article {}
     
 
 
+
+
+    

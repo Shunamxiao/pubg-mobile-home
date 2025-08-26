@@ -32,39 +32,36 @@ export function Header() {
         label: section.navLabel,
         sectionId: section.id,
     })),
-    { href: `#${siteConfig.video.id}`, label: siteConfig.video.navLabel, sectionId: siteConfig.video.id },
+    ...(siteConfig.video.enabled ? [{ href: `#${siteConfig.video.id}`, label: siteConfig.video.navLabel, sectionId: siteConfig.video.id }] : []),
   ];
 
   useEffect(() => {
-    const sectionsToObserve = navLinks.slice(1).map(link => document.getElementById(link.sectionId)).filter(Boolean);
-    
-    if (sectionsToObserve.length === 0) return;
+    const handleScroll = () => {
+        const sectionsToObserve = navLinks
+            .map(link => document.getElementById(link.sectionId))
+            .filter(Boolean);
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
+        let currentSection = 'home';
 
-      // Check if any section is intersecting. If not, we are at the top.
-      const isAnySectionIntersecting = entries.some(entry => entry.isIntersecting);
-      if (!isAnySectionIntersecting && window.scrollY < sectionsToObserve[0]?.offsetTop) {
-        setActiveSection('home');
-      }
+        sectionsToObserve.forEach(section => {
+            if (section) {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 100) { // 100px offset
+                    currentSection = section.id;
+                }
+            }
+        });
+        
+        setActiveSection(currentSection);
+    };
 
-    }, { rootMargin: "-50% 0px -50% 0px" });
-
-    sectionsToObserve.forEach(section => {
-      if (section) observer.observe(section);
-    });
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Set initial active section
 
     return () => {
-      sectionsToObserve.forEach(section => {
-        if (section) observer.unobserve(section);
-      });
+        window.removeEventListener('scroll', handleScroll);
     };
-  }, [navLinks]);
+}, [navLinks]);
   
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -79,7 +76,16 @@ export function Header() {
     // If we're already on the homepage, scroll to the section
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        // Adjust scroll position to account for sticky header
+        const headerOffset = 80; // height of header + some margin
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
         // Manually set active section for instant feedback on click
         setActiveSection(targetId);
     }
@@ -161,3 +167,5 @@ export function Header() {
     </>
   );
 }
+
+    
