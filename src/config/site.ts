@@ -20,8 +20,7 @@ export const siteConfig = {
             })();
         `,
         customHeadHtml: `
-            <meta name="custom-meta" content="hello-world">
-            <link rel="stylesheet" href="https://example.com/custom.css">
+            <meta name="baidu-site-verification" content="codeva-9XyV2k6cAS" />
         `,
     },
     header: {
