@@ -59,7 +59,7 @@ export const siteConfig = {
     video: {
         id: 'video',
         title: '地铁逃生4.0版本即将来袭！',
-        url: 'https://cdn.apks.cc/blinko/%5Btwi%5D%40PUBG%20_twi.mp4',
+        url: 'https://cdn.apks.cc/blinko/SaveTwitter.Net_PvBCAHz2Hgyl45Oq_(1080p).mp4',
         playerTitle: 'pubgm4.0版本',
         navLabel: '官方频道',
         enabled: true,
@@ -87,6 +87,16 @@ export const siteConfig = {
             title: '最新文章',
             navLabel: '资讯',
             items: [
+                {
+                    slug: 'pubgm-4.0-news-0904',
+                    title: '《PUBG Mobile》4.0版本即将来袭！',
+                    summary: '地铁逃生新赛季将于9/4日推出',
+                    content: `## 探索使用魔法掃帚穿越戰場的全新方式，該功能可在 PUBG MOBILE 版本 4.0 中使用。 \n\n🧹📆版本 4.0 將於 9 月 4 日發布，所以請在日曆上做個標記並做好準備！`,
+                    author: '猫咪蒲公英',
+                    date: '2025年8月26日',
+                    imageUrl: 'https://cdn.apks.cc/blinko/1500x500.jpg',
+                    imageHint: 'phone sim card',
+                  },
                 {
                     slug: 'pubgm-4.0-news-0826',
                     title: '《PUBG Mobile》4.0版本即将来袭！',
