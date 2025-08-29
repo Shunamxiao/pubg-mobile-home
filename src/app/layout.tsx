@@ -30,14 +30,7 @@ export default function RootLayout({
     <html lang="zh-Hans" className="dark">
       <head>
         {siteConfig.analytics.customHeadHtml && (
-           <>{/* Using a fragment to avoid invalid HTML */}
-            <script dangerouslySetInnerHTML={{ __html: `
-              (function() {
-                var newContent = document.createRange().createContextualFragment(\`${siteConfig.analytics.customHeadHtml}\`);
-                document.head.append(...newContent.childNodes);
-              })();
-            `}} />
-           </>
+           <div dangerouslySetInnerHTML={{ __html: siteConfig.analytics.customHeadHtml }} />
         )}
       </head>
       <body className="font-body antialiased bg-background text-foreground">
