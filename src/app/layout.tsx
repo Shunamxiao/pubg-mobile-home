@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from '@/config/site';
-import parse from 'react-html-parser';
 
 // Metadata is still useful for static tags
 export const metadata: Metadata = {
@@ -22,15 +21,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Server-only component to parse and render raw HTML
-function RawHTML({ html, tagName: Tag, ...props }: { html: string; tagName?: keyof JSX.IntrinsicElements; [key: string]: any }) {
-  const parsedHtml = parse(html);
-  if (Tag) {
-    return <Tag {...props}>{parsedHtml}</Tag>;
-  }
-  return <>{parsedHtml}</>;
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,7 +30,14 @@ export default function RootLayout({
     <html lang="zh-Hans" className="dark">
       <head>
         {siteConfig.analytics.customHeadHtml && (
-          <RawHTML html={siteConfig.analytics.customHeadHtml} />
+           <>{/* Using a fragment to avoid invalid HTML */}
+            <script dangerouslySetInnerHTML={{ __html: `
+              (function() {
+                var newContent = document.createRange().createContextualFragment(\`${siteConfig.analytics.customHeadHtml}\`);
+                document.head.append(...newContent.childNodes);
+              })();
+            `}} />
+           </>
         )}
       </head>
       <body className="font-body antialiased bg-background text-foreground">
