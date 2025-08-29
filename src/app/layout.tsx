@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: siteConfig.seo.keywords,
     verification: {
       // Directly add the Baidu site verification code here
-      baidu: 'codeva-9XyV2k6cAS',
+      baidu: siteConfig.seo.baiduSiteVerification,
     },
     openGraph: {
       title: `${siteConfig.name} - ${siteConfig.seo.title}`,
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="zh-Hans" className="dark">
       <head>
-        {/* The <head> tag should be left empty. 
+        {/* The <head> tag is left empty. 
             Next.js will automatically populate it based on the metadata object. */}
       </head>
       <body className="font-body antialiased bg-background text-foreground">
