@@ -6,23 +6,26 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from '@/config/site';
 
-// Metadata is still useful for static tags
-export const metadata: Metadata = {
-  title: {
-    default: `${siteConfig.name} - ${siteConfig.seo.title}`,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.seo.description,
-  keywords: siteConfig.seo.keywords,
-  openGraph: {
-    title: `${siteConfig.name} - ${siteConfig.seo.title}`,
+// Use generateMetadata for robust server-side head tag generation
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: {
+      default: `${siteConfig.name} - ${siteConfig.seo.title}`,
+      template: `%s - ${siteConfig.name}`,
+    },
     description: siteConfig.seo.description,
-    images: [siteConfig.seo.ogImage],
-  },
-  verification: {
-    baidu: siteConfig.seo.baiduSiteVerification,
-  },
-};
+    keywords: siteConfig.seo.keywords,
+    verification: {
+      // Directly add the Baidu site verification code here
+      baidu: 'codeva-9XyV2k6cAS',
+    },
+    openGraph: {
+      title: `${siteConfig.name} - ${siteConfig.seo.title}`,
+      description: siteConfig.seo.description,
+      images: [siteConfig.seo.ogImage],
+    },
+  };
+}
 
 export default function RootLayout({
   children,
@@ -32,6 +35,8 @@ export default function RootLayout({
   return (
     <html lang="zh-Hans" className="dark">
       <head>
+        {/* The <head> tag should be left empty. 
+            Next.js will automatically populate it based on the metadata object. */}
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
