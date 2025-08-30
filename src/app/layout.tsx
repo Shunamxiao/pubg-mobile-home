@@ -15,10 +15,6 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: siteConfig.seo.description,
     keywords: siteConfig.seo.keywords,
-    verification: {
-      // Directly add the Baidu site verification code here
-      baidu: siteConfig.seo.baiduSiteVerification,
-    },
     openGraph: {
       title: `${siteConfig.name} - ${siteConfig.seo.title}`,
       description: siteConfig.seo.description,
@@ -35,8 +31,20 @@ export default function RootLayout({
   return (
     <html lang="zh-Hans" className="dark">
       <head>
-        {/* The <head> tag is left empty. 
-            Next.js will automatically populate it based on the metadata object. */}
+        {/* 
+          The <head> tag is mostly managed by Next.js via the Metadata API.
+          We are injecting custom HTML here for analytics and other scripts
+          that need to be present in the initial server-rendered HTML.
+          The <noscript> tag is a trick to allow dangerouslySetInnerHTML
+          in the head without causing React hydration errors.
+        */}
+        {siteConfig.analytics.customHeadHtml && (
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `</noscript>${siteConfig.analytics.customHeadHtml}<noscript>`,
+            }}
+          />
+        )}
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
@@ -45,9 +53,6 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
-        {siteConfig.analytics.customBodyScript && (
-          <script dangerouslySetInnerHTML={{ __html: siteConfig.analytics.customBodyScript }} />
-        )}
       </body>
     </html>
   );

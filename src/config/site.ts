@@ -10,7 +10,9 @@ export const siteConfig = {
         ogImage: 'https://cdn.apks.cc/blinko/1753974441995-1753974441505-share.jpg',
     },
     analytics: {
-        customBodyScript: `
+        customHeadHtml: `
+            <meta name="baidu-site-verification" content="codeva-9XyV2k6cAS" />
+            <script>
             var _hmt = _hmt || [];
             (function() {
               var hm = document.createElement("script");
@@ -18,6 +20,7 @@ export const siteConfig = {
               var s = document.getElementsByTagName("script")[0]; 
               s.parentNode.insertBefore(hm, s);
             })();
+            </script>
         `,
     },
     header: {
