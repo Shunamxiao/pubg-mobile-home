@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description: siteConfig.seo.description,
     images: [siteConfig.seo.ogImage],
   },
+  verification: {
+    baidu: siteConfig.seo.baiduSiteVerification,
+  },
 };
 
 export default function RootLayout({
