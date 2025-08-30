@@ -19,9 +19,6 @@ export const siteConfig = {
               s.parentNode.insertBefore(hm, s);
             })();
         `,
-        customHeadHtml: `
-            <meta name="baidu-site-verification" content="codeva-9XyV2k6cAS" />
-        `,
     },
     header: {
         logo: {
@@ -202,20 +199,3 @@ export interface Section {
   
 export interface Update extends Article {}
   
-
-    
-
-    
-
-
-
-    
-
-    
-
-
-
-
-    
-
-    

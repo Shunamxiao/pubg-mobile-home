@@ -29,9 +29,6 @@ export default function RootLayout({
   return (
     <html lang="zh-Hans" className="dark">
       <head>
-        {siteConfig.analytics.customHeadHtml && (
-           <div dangerouslySetInnerHTML={{ __html: siteConfig.analytics.customHeadHtml }} />
-        )}
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
