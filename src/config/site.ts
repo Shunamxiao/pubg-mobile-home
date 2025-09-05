@@ -12,6 +12,7 @@ export const siteConfig = {
     analytics: {
         customHeadHtml: `
             <meta name="baidu-site-verification" content="codeva-9XyV2k6cAS" />
+            <meta name="google-site-verification" content="wheyJrkeJteNmtsowo1dyWiAtd18QqJR0VGilx25600" />
             <script>
             var _hmt = _hmt || [];
             (function() {
