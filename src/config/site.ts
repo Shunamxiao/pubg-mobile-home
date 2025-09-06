@@ -13,6 +13,8 @@ export const siteConfig = {
         customHeadHtml: `
             <meta name="baidu-site-verification" content="codeva-9XyV2k6cAS" />
             <meta name="google-site-verification" content="wheyJrkeJteNmtsowo1dyWiAtd18QqJR0VGilx25600" />
+            <meta name="360-site-verification" content="999219046b1b9e0ef3a7f7c0f481fe20" />
+            <meta name="sogou_site_verification" content="2rU7VTaXRK" />
             <script>
             var _hmt = _hmt || [];
             (function() {
@@ -59,7 +61,7 @@ export const siteConfig = {
     },
     video: {
         id: 'video',
-        title: '地铁逃生4.0版本即将来袭！',
+        title: '地铁逃生4.0版本！',
         url: 'https://cdn.apks.cc/blinko/SaveTwitter.Net_PvBCAHz2Hgyl45Oq_(1080p).mp4',
         playerTitle: 'pubgm4.0版本',
         navLabel: '官方频道',
@@ -161,25 +163,25 @@ export const siteConfig = {
             navLabel: '更新日志',
             items: [
                 {
-                    slug: 'version-3-2-0',
-                    version: '3.2.0',
-                    title: '3.2版本：机甲聚变',
-                    summary: '机甲聚变更新现已上线！驾驶巨型机甲，探索全新的钢铁方舟，并掌握全新的喷气背包机制。',
-                    content: `## 3.2版本：机甲聚变更新\n\n3.2版本引入了激动人心的机甲聚变模式。玩家现在可以找到并驾驶强大的机甲，每种机甲都有独特的能力。\n\n- **行者号**：一种适合侦察的敏捷机甲。\n- **利维坦号**：一种重武装野兽，能够施展毁灭性的火力。\n\n全新的“钢铁方舟”据点已加入艾伦格。这座巨大的飞行堡垒是一个高风险、高回报的降落点，充满了顶级战利品。\n\n为了帮助穿越战场，所有玩家现在都配备了个人喷气背包，可以进行短暂的飞行，实现惊人的机动性。\n\n本次更新还包括各种生活质量改进、新的赛季通行证以及对几种突击步枪的重新平衡。`,
+                    slug: 'version-4-0',
+                    version: '4.0',
+                    title: '4.0版本',
+                    summary: '地铁逃生新赛季，4.0版本正式推出！。',
+                    content: `总是打不赢？不喜欢笨重的换弹？摩托胎爆掉耽误你？上了征服者就无聊？想找点新鲜刺激？
+
+全新迫击炮：近距急袭 / 远距压制 2 种模式随你切换！
+拟真换弹：提前换弹保留1发子弹，手枪动画更流畅，不断火力！
+摩托车：快速换胎、射击更稳定！船只操作也更顺滑！
+荣耀之路：王牌以上专属奖励，冲分更有价值！
+Lipovka新娱乐区：摩天轮、秋千＋补给点，战斗后也能悠闲一刻！
+
+更多更新：4倍镜准星可切换、全新传说武器、Lipovka全面升级！
+可以查看哔哩哔哩：[mcpezydq资讯分享](https://space.bilibili.com/581766333/dynamic?spm_id_from=333.1368.list.card_title.click "查看详情")
+`,
                     date: '2024年7月28日',
-                    imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(5).webp',
+                    imageUrl: 'https://cdn.apks.cc/blinko/849adb4c04a71a0e718daad1e3af8874581766333.jpg@1052w_!web-dynamic.webp',
                     imageHint: 'giant robot',
-                },
-                {
-                    slug: 'version-3-1-0',
-                    version: '3.1.0',
-                    title: '3.1版本：天方夜谭',
-                    summary: '通过天方夜谭更新，步入一个充满魔法和神秘的世界。发现全新的神灯岛，并驾驭飞毯。',
-                    content: `## 3.1版本：天方夜谭更新\n\n天方夜谭更新为战场带来了一丝魔力。全新的神灯岛是一个充满活力、宝藏丰富的地点，拥有互动元素。敲响锣鼓召唤补给，或者寻找可以满足你获得强大战利品愿望的神灯精灵。\n\n**飞毯**是一种全新的双人载具，可以在地图上进行安静而迅速的移动，非常适合隐蔽的转移。\n\n此补丁还引入了全新的**AMR狙击步枪**，即使是3级头盔也能一枪击破，并修复了大量错误和进行了性能优化。`,
-                    date: '2024年6月15日',
-                    imageUrl: 'https://cdn.apks.cc/blinko/unnamed%20(6).webp',
-                    imageHint: 'desert city',
-                },
+                }
             ]
         }
     ]
