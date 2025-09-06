@@ -178,7 +178,7 @@ Lipovka新娱乐区：摩天轮、秋千＋补给点，战斗后也能悠闲一�
 更多更新：4倍镜准星可切换、全新传说武器、Lipovka全面升级！
 可以查看哔哩哔哩：[mcpezydq资讯分享](https://space.bilibili.com/581766333/dynamic?spm_id_from=333.1368.list.card_title.click "查看详情")
 `,
-                    date: '2024年7月28日',
+                    date: '2025年9月06日',
                     imageUrl: 'https://cdn.apks.cc/blinko/849adb4c04a71a0e718daad1e3af8874581766333.jpg@1052w_!web-dynamic.webp',
                     imageHint: 'giant robot',
                 }
